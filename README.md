@@ -1,1 +1,1 @@
-# edgeai-digital-model-
+# edgeai-digital-model
