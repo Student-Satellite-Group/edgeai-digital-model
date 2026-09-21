@@ -1,0 +1,15 @@
+{
+  "camera_model": "nüSpace CMOS (Nüvü Caméras)",
+  "pixel_size_um": 4.6,
+  "focal_length_mm": 320.0,
+  "pixels_across_track": 4096,
+  "pixels_along_track": 2300,
+  "active_area_mm": "18.9 x 10.6",
+  "spectral_range": "300-1000 nm",
+  "datasheet_source_url": "https://www.nuvucameras.com/wp-content/uploads/nuvucameras_nuSpace_CMOS-v3.1.3.pdf",
+  "datasheet_file": "data/camera_datasheets/nuSpace_CMOS_datasheet.pdf",
+  "datasheet_retrieved": "2026-09-22",
+  "published_nadir_gsd_m_at_500km": 7.2,
+  "published_swath_km_at_500km": 29.5,
+  "notes": "Values traceable to the nüSpace CMOS specification sheet v3.1.3 (Nüvü Caméras). Focal length options: 320 mm (GSD 7.2 m @ 500 km) and 630 mm (GSD 3.6 m @ 500 km); 320 mm selected as the baseline."
+}
