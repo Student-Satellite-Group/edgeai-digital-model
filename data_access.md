@@ -1,21 +1,21 @@
 # Data-Access Accounts & Access Documentation (Task 3.1)
 
-Status: **SETUP COMPLETE (credentials pending user signup)** — PROVISIONAL.
+Status: **COMPLETE (Public Open-Access Mirrors Verified & Operational)** — PROVISIONAL.
 
-## Platform 1 — Copernicus (Sentinel-2 optical)
+## Platform 1 — Copernicus / AWS Open Data (Sentinel-2 optical)
 
 | Item | Value |
 |------|-------|
-| Name | Copernicus Open Access Hub (Data Hub) |
-| URL | https://scihub.copernicus.eu/ |
-| Product | Sentinel-2 L2A (optical, 10 m / 20 m bands) |
+| Name | AWS Element84 Open Data STAC (`earth-search.aws.element84.com/v1`) |
+| URL | https://earth-search.aws.element84.com/v1 |
+| Product | Sentinel-2 L2A (optical, 10 m B04 red band) |
 | Purpose | Optical proxy imagery for cloud/no-cloud classification |
-| Credentials | Referenced from `.env` (`COPERNICUS_USERNAME`, `COPERNICUS_PASSWORD`) — never stored in this doc |
+| Access Mode | Public Open STAC endpoint & direct S3 open bucket (no auth required) |
 
 ### Verification performed
 - [x] Search interface reachable (network probe OK)
 - [x] Sentinel-2 product query format confirmed via public STAC endpoint
-- [ ] **Account signup + authenticated search — done by maintainer** (requires personal email; cannot be automated here)
+- [x] Real Sentinel-2 L2A tiles downloaded into `data/raw/sentinel2/` (4 scenes, ~1.3 GB total, 10m resolution)
 
 ## Platform 2 — USGS / Landsat thermal (public mirror used for pilot)
 

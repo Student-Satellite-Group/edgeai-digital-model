@@ -90,7 +90,7 @@ def _download(url, dest):
     dest = Path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and dest.stat().st_size > 0:
-        return False
+        return True
     r = requests.get(url, stream=True, timeout=(30, 600))
     r.raise_for_status()
     tmp = dest.with_suffix(dest.suffix + ".part")
@@ -119,7 +119,7 @@ def pilot_sentinel2(limit=4):
         href = assets.get("B04", assets.get("visual", assets.get("thumbnail", "")))
         if not href:
             continue
-        rel = f"{dirp}/B04.tif"
+        rel = (dirp / "B04.tif").as_posix()
         _download(href, rel)
         rows.append({
             "scene_id": sid, "source": "sentinel2", "platform": "Sentinel-2",
@@ -158,9 +158,8 @@ def pilot_landsat(limit=4):
             scene, bfile = parts[-2], parts[-1]
             sid = scene
             dirp = RAW_LS / scene
-            rel = f"{dirp}/B10.TIF"
-            url = f"https://storage.googleapis.com/{GCS_LS_BUCKET}/{name}"
-            if _download(url, rel):
+            rel = (dirp / "B10.TIF").as_posix()
+            if _download(url := f"https://storage.googleapis.com/{GCS_LS_BUCKET}/{name}", rel):
                 date = ""
                 # LC08_L1GT_146040_YYYYMMDD_... -> acquisition date
                 toks = scene.split("_")
@@ -179,12 +178,22 @@ def pilot_landsat(limit=4):
 
 def write_manifest(rows):
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
-    new = not MANIFEST.exists()
-    with open(MANIFEST, "a", newline="", encoding="utf-8") as f:
+    existing_scenes = set()
+    existing_rows = []
+    if MANIFEST.exists():
+        with open(MANIFEST, "r", newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                existing_scenes.add(r["scene_id"])
+                existing_rows.append(r)
+    for r in rows:
+        if r["scene_id"] not in existing_scenes:
+            existing_rows.append(r)
+            existing_scenes.add(r["scene_id"])
+    with open(MANIFEST, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=MANIFEST_COLS)
-        if new:
-            w.writeheader()
-        w.writerows(rows)
+        w.writeheader()
+        w.writerows(existing_rows)
 
 
 def main():
