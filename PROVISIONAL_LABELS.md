@@ -11,3 +11,5 @@ All parameters below are derived from provisional candidate camera specification
 | `sensor_model.py` | `gsd()` return | 7.19 m/pixel | Derived at 500 km altitude |
 | `sensor_model.py` | `swath()` return | 29.44 km | Derived at 500 km altitude |
 | `sensor_go_nogo.md` | Target GSD Threshold | 7.19 m/pixel | Evaluated against 50.0 m target |
+| `task_definition.md` | `Altitude & Camera baseline` | 500 km / nüSpace CMOS (7.2 m GSD) | PROVISIONAL — Section 2 mission context |
+| `hardware_handoff.md` | `Provisional Inputs Register` | Camera (nüSpace), Altitude (500 km), Proxy data | PROVISIONAL — Section 1 hardware transition map |
