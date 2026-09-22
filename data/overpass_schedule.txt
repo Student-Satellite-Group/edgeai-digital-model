@@ -1,0 +1,8 @@
+Overpass schedule -- Task 1.5
+Target region: lat=28.6 deg, lon=77.2 deg (New Delhi), radius=50.0 km
+Orbit: altitude=500.0 km, inclination=97.3913 deg, RAAN=155.20 deg (calibrated so the target is covered), window=24h @ 60s steps
+Passes found: 1
+
+Pass 1: start=2026-01-01T22:13:00Z  end=2026-01-01T22:13:00Z  duration_s=0  n_samples=1  min_distance_km=23.34
+
+Note: a 1-sample (duration_s=0) pass is expected, not a bug -- at ~7 km/s ground-track speed, crossing a 50 km-radius region takes roughly 14s, which is shorter than the 60s sampling step, so most such crossings are only caught by a single sample.
