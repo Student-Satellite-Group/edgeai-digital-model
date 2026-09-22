@@ -4,10 +4,10 @@ All parameters below are derived from provisional candidate camera specification
 
 | File Path | Entity / Constant | Current Value | Status / Dependency |
 | :--- | :--- | :--- | :--- |
-| `sensor_specs.json` | `pixel_size_um` | 5.0 µm | PROVISIONAL — Pending procurement |
-| `sensor_specs.json` | `focal_length_mm` | 100.0 mm | PROVISIONAL — Pending procurement |
+| `sensor_specs.json` | `pixel_size_um` | 4.6 µm | PROVISIONAL — nüSpace CMOS datasheet |
+| `sensor_specs.json` | `focal_length_mm` | 320.0 mm | PROVISIONAL — nüSpace CMOS datasheet |
 | `sensor_model.py` | `PROVISIONAL` | `True` | Global module flag |
 | `sensor_model.py` | `PROVISIONAL_TAG` | String Tag | Hardcoded warning string |
-| `sensor_model.py` | `gsd()` return | 25.0 m/pixel | Derived at 500 km altitude |
-| `sensor_model.py` | `swath()` return | 102.4 km | Derived at 500 km altitude |
-| `sensor_go_nogo.md` | Target GSD Threshold | 25.0 m/pixel | Evaluated against 50.0 m target |
+| `sensor_model.py` | `gsd()` return | 7.19 m/pixel | Derived at 500 km altitude |
+| `sensor_model.py` | `swath()` return | 29.44 km | Derived at 500 km altitude |
+| `sensor_go_nogo.md` | Target GSD Threshold | 7.19 m/pixel | Evaluated against 50.0 m target |
