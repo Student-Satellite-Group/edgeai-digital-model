@@ -1,0 +1,47 @@
+%General Mission Analysis Tool(GMAT) Script
+%Task 1.3 supplementary validation - 500 km circular Sun-Synchronous Orbit
+%
+%GMAT is not installed in the environment that produced cross_validation.py
+%and cross_validation_log.md, so this script was written but not executed.
+%Run it in GMAT (https://sourceforge.net/projects/gmat/) to add a fourth
+%independent confirmation of orbital_model.py's Task 1.1/1.2 outputs:
+%  - Expected orbital period:      ~94.5 minutes
+%  - Expected sun-sync inclination: ~97.4 degrees
+%After running, add GMAT's reported OrbitPeriod and RAAN-drift-per-day to
+%cross_validation_log.md as a fourth row.
+
+Create Spacecraft Sat;
+GMAT Sat.DateFormat = UTCGregorian;
+GMAT Sat.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT Sat.CoordinateSystem = EarthMJ2000Eq;
+GMAT Sat.DisplayStateType = Keplerian;
+GMAT Sat.SMA = 6871.0;          %500 km altitude + 6371 km mean Earth radius
+GMAT Sat.ECC = 0.0001;
+GMAT Sat.INC = 97.4016;         %from cross_validation.py hand_calculation() -- confirm GMAT agrees
+GMAT Sat.RAAN = 0;
+GMAT Sat.AOP = 0;
+GMAT Sat.TA = 0;
+
+Create ForceModel FM;
+GMAT FM.CentralBody = Earth;
+GMAT FM.PrimaryBodies = {Earth};
+GMAT FM.Drag = None;
+GMAT FM.SRP = Off;
+GMAT FM.GravityField.Earth.Degree = 4;
+GMAT FM.GravityField.Earth.Order = 4;
+GMAT FM.GravityField.Earth.PotentialFile = 'JGM2.cof';
+
+Create Propagator Prop;
+GMAT Prop.FM = FM;
+GMAT Prop.Type = RungeKutta89;
+
+%Sat.OrbitPeriod is GMAT's own Keplerian-period parameter -- compare it
+%directly against cross_validation_log.md's ~94.5 minute figure.
+%RAAN is reported once per day of propagation below so the drift per day
+%can be read off directly and compared against the target 0.9856 deg/day.
+Create ReportFile Report;
+GMAT Report.Filename = 'gmat_validation_output.txt';
+GMAT Report.Add = {Sat.ElapsedDays, Sat.OrbitPeriod, Sat.EarthMJ2000Eq.RAAN, Sat.Earth.Altitude};
+
+BeginMissionSequence;
+Propagate Prop(Sat) {Sat.ElapsedDays = 1};

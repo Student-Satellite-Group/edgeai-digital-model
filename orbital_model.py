@@ -17,7 +17,8 @@ TARGET_ALTITUDE_KM = 500.0
 
 # Earth constants (SI units).
 MU_EARTH = 398600e9      # standard gravitational parameter, m^3/s^2
-RE_EARTH = 6371e3        # mean equatorial radius, m (nominal WGS-84 geoid)
+RE_EARTH = 6371e3        # mean radius, m (nominal WGS-84 geoid; see cross_validation_log.md
+                          # for why this differs slightly from the 6378.137 km equatorial radius)
 J2_EARTH = 1.0826e-3     # J2 zonal harmonic (Earth oblateness)
 DEG_PER_DAY = 360.0 / 365.25   # mean orbital Sun motion, deg/day
 
