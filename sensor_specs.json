@@ -1,0 +1,8 @@
+{
+  "camera_model": "Provisional LEO Optical Payload",
+  "pixel_size_um": 5.0,
+  "focal_length_mm": 100.0,
+  "pixels_across_track": 4096,
+  "pixels_along_track": 3072,
+  "status": "PROVISIONAL - pending final camera procurement"
+}
