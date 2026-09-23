@@ -4,6 +4,15 @@ thermal imagery.
 
     F(x, y) = alpha * RGB(x, y) + (1 - alpha) * Thermal_registered(x, y)
 
+Role update (post Task 5.2 revision, see task_definition.md): this pixel-level
+blend is no longer the classifier's input. The trained model
+(model_architecture.py) fuses RGB and native-resolution thermal at the
+*feature* level instead, via two separate branches -- avoiding the need to
+warp the native 32x24 thermal grid onto RGB's full pixel grid before any
+learning happens. fuse_images()/alpha_sweep() below remain valid as a
+standalone data product (Architecture Section 7.3, "fused output frame") for
+logging/visualization, just decoupled from inference.
+
 Both inputs are normalised to [0, 1] before blending, then clipped back to
 uint8. `fuse_images()` performs a single blend; `alpha_sweep()` blends over a
 range of alpha values and reports SSIM/PSNR against a probe image for each
