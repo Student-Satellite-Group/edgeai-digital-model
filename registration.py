@@ -5,6 +5,17 @@ homography -> warp registration pipeline.
 Registers a "moving" image (e.g. the thermal band) onto a "reference" image
 (e.g. the optical band) so the pair can be fused pixel-aligned (Task 4.5).
 
+Role update (post Task 5.2 revision, see task_definition.md): the trained
+classifier no longer consumes a full pixel-warped thermal frame -- it uses
+the two-branch feature-fusion model in model_architecture.py, which takes
+RGB and native-resolution thermal as separate inputs. For that model,
+register_images()'s homography M is used to determine which RGB crop
+corresponds to the current thermal footprint (so both branches see the same
+patch of ground), not to warp thermal onto RGB's full pixel grid. The
+warp_images() pixel-warping path below is still valid and still used by
+fusion.py's pixel-level "fused output frame" data product (Architecture
+Section 7.3), which is now decoupled from inference.
+
 Pipeline (all four steps chained by register_images()):
     detect_keypoints(image)      : cv2.ORB_create() -> (kp, desc)
     match_features(desc1, desc2) : cv2.BFMatcher (Brute-Force Hamming) -> good matches
