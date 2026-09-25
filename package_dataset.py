@@ -254,7 +254,6 @@ def _write_synthetic_optical(path: str, sample_id: str = "") -> None:
     """Write a 128x128x3 uint16 GeoTIFF with discriminative signal matching synthetic label."""
     import hashlib
     from rasterio.transform import from_bounds
-    from rasterio.crs import CRS
     h = int(hashlib.sha256((sample_id or path).encode()).hexdigest(), 16)
     is_cloud = 1 if (h % 100) < 40 else 0
     rng = np.random.default_rng(seed=h % (2**32))
@@ -274,7 +273,7 @@ def _write_synthetic_optical(path: str, sample_id: str = "") -> None:
     meta = {
         "driver": "GTiff", "dtype": "uint16", "count": 3,
         "height": 128, "width": 128,
-        "crs": CRS.from_epsg(32643),
+        "crs": "EPSG:32643",
         "transform": from_bounds(710000, 3140000, 711024, 3141024, 128, 128),
     }
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
@@ -286,7 +285,6 @@ def _write_synthetic_thermal(path: str, sample_id: str = "") -> None:
     """Write a 24x32x1 uint16 GeoTIFF with cold cloud vs warm ground temperatures."""
     import hashlib
     from rasterio.transform import from_bounds
-    from rasterio.crs import CRS
     h = int(hashlib.sha256((sample_id or path).encode()).hexdigest(), 16)
     is_cloud = 1 if (h % 100) < 40 else 0
     rng = np.random.default_rng(seed=(h + 10000) % (2**32))
@@ -301,7 +299,7 @@ def _write_synthetic_thermal(path: str, sample_id: str = "") -> None:
     meta = {
         "driver": "GTiff", "dtype": "uint16", "count": 1,
         "height": 24, "width": 32,
-        "crs": CRS.from_epsg(32643),
+        "crs": "EPSG:32643",
         "transform": from_bounds(710000, 3140000, 711024, 3141024, 32, 24),
     }
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
@@ -312,11 +310,10 @@ def _write_synthetic_thermal(path: str, sample_id: str = "") -> None:
 def _write_zero_thermal(path: str) -> None:
     """Write a zero-valued 24x32x1 uint16 GeoTIFF as a nodata placeholder."""
     from rasterio.transform import from_bounds
-    from rasterio.crs import CRS
     meta = {
         "driver": "GTiff", "dtype": "uint16", "count": 1,
         "height": 24, "width": 32,
-        "crs": CRS.from_epsg(32643),
+        "crs": "EPSG:32643",
         "transform": from_bounds(710000, 3140000, 711024, 3141024, 32, 24),
     }
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
