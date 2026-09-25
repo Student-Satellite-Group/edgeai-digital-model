@@ -1,7 +1,7 @@
 # Dataset Quality-Check Report
 
 **Issue:** [#15 — Task 3.6 - Quality Check the Dataset](https://github.com/SohamB-42/edgeai-digital-model/issues/15)  
-**Generated:** 2026-09-25 15:53 UTC  
+**Generated:** 2026-09-25 16:19 UTC  
 **Manifest:** `data/labeled/manifest.csv`
 
 ---
@@ -35,26 +35,26 @@
 
 | sample_id | Optical var | Centre offset | Labels | Status |
 |-----------|-------------|---------------|--------|--------|
-| sample_0000 | 1399543.0 | 0 m | - | OK |
-| sample_0001 | 1402630.0 | 0 m | - | OK |
-| sample_0002 | 1394712.1 | 0 m | - | OK |
-| sample_0003 | 1400793.5 | 0 m | - | OK |
-| sample_0004 | 1396508.6 | 0 m | - | OK |
-| sample_0005 | 1407804.4 | 0 m | - | OK |
-| sample_0006 | 1398633.4 | 0 m | - | OK |
-| sample_0007 | 1402012.9 | 0 m | - | OK |
-| sample_0008 | 1404019.1 | 0 m | - | OK |
-| sample_0009 | 1392897.9 | 0 m | - | OK |
-| sample_0010 | 1385386.1 | 0 m | - | OK |
-| sample_0011 | 1399625.6 | 0 m | - | OK |
-| sample_0012 | 1401367.0 | 0 m | - | OK |
-| sample_0013 | 1391706.6 | 0 m | - | OK |
-| sample_0014 | 1396605.1 | 0 m | - | OK |
-| sample_0015 | 1402076.0 | 0 m | - | OK |
-| sample_0016 | 1405740.4 | 0 m | - | OK |
-| sample_0017 | 1389949.0 | 0 m | - | OK |
-| sample_0018 | 1398545.4 | 0 m | - | OK |
-| sample_0019 | 1398620.9 | 0 m | - | OK |
+| sample_0000 | 637047.2 | 0 m | - | OK |
+| sample_0001 | 638594.4 | 0 m | - | OK |
+| sample_0002 | 635521.2 | 0 m | - | OK |
+| sample_0003 | 99087.5 | 0 m | - | OK |
+| sample_0004 | 635242.1 | 0 m | - | OK |
+| sample_0005 | 98473.1 | 0 m | - | OK |
+| sample_0006 | 637954.2 | 0 m | - | OK |
+| sample_0007 | 636630.7 | 0 m | - | OK |
+| sample_0008 | 638883.1 | 0 m | - | OK |
+| sample_0009 | 635465.0 | 0 m | - | OK |
+| sample_0010 | 98545.1 | 0 m | - | OK |
+| sample_0011 | 98702.9 | 0 m | - | OK |
+| sample_0012 | 636722.2 | 0 m | - | OK |
+| sample_0013 | 100264.0 | 0 m | - | OK |
+| sample_0014 | 635322.3 | 0 m | - | OK |
+| sample_0015 | 636160.6 | 0 m | - | OK |
+| sample_0016 | 635899.6 | 0 m | - | OK |
+| sample_0017 | 638832.6 | 0 m | - | OK |
+| sample_0018 | 636967.7 | 0 m | - | OK |
+| sample_0019 | 98873.0 | 0 m | - | OK |
 
 ## 5. Findings and Notes
 

@@ -1,0 +1,72 @@
+{
+  "project": "edgeai-digital-model",
+  "version": "v1.0-digital-model",
+  "release_tag": "v1.0-digital-model",
+  "build_timestamp_utc": "2026-09-25T22:12:00Z",
+  "branch": "team-b-data-pipeline",
+  "taxonomy_level": "Digital Model (Simulation & Proxy Data)",
+  "status": "Final Delivery Complete (Phases 1-8)",
+  "dataset": {
+    "manifest_path": "data/labeled/manifest.csv",
+    "total_samples": 104,
+    "spatial_dimensions": {
+      "optical": "128x128x3",
+      "thermal": "32x24x1"
+    },
+    "label_classes": {
+      "0": "No-Cloud / Ground",
+      "1": "Cloud"
+    },
+    "qc_status": "100% Passed (104/104 samples verified)"
+  },
+  "models": {
+    "float32_keras": {
+      "path": "models/model_float32.h5",
+      "parameters": 19090,
+      "test_accuracy": 1.0000
+    },
+    "float32_tflite": {
+      "path": "models/model_float32.tflite",
+      "size_kb": 81.8,
+      "test_accuracy": 1.0000
+    },
+    "int8_quantized_tflite": {
+      "path": "models/model_int8.tflite",
+      "size_kb": 42.6,
+      "size_reduction_pct": 47.9,
+      "quantization_delta_pp": 0.0,
+      "test_accuracy": 1.0000,
+      "mean_inference_latency_ms": 0.43
+    }
+  },
+  "deliverables": [
+    "orbital_model.py",
+    "sensor_model.py",
+    "sensor_specs.json",
+    "package_dataset.py",
+    "label_dataset.py",
+    "qc_dataset.py",
+    "registration.py",
+    "fusion.py",
+    "tune_registration.py",
+    "rmse_harness.py",
+    "model_architecture.py",
+    "train_pipeline.py",
+    "evaluate_float32.py",
+    "quantize_model.py",
+    "quantization_delta.py",
+    "digital_model_pipeline.py",
+    "run_phase7_validation.py",
+    "training_log.md",
+    "evaluation_float32.md",
+    "quantization_delta.md",
+    "pipeline_run_results.md",
+    "internal_validation_report.md",
+    "final_digital_model_report.md",
+    "hardware_handoff.md",
+    "terminology_statement.md",
+    "PROVISIONAL_LABELS.md",
+    "module_interfaces.md",
+    "README.md"
+  ]
+}

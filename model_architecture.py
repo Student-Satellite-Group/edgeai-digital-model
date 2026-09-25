@@ -62,15 +62,15 @@ def _rgb_branch(rgb_input, widths=(16, 32, 64, 128)):
     resolution, not before it.
     """
     x = layers.Conv2D(widths[0], 3, strides=2, padding="same")(rgb_input)
-    x = layers.BatchNormalization()(x)
+    x = layers.BatchNormalization(momentum=0.6)(x)
     x = layers.ReLU()(x)
 
     for filters in widths[1:]:
         x = layers.DepthwiseConv2D(3, strides=2, padding="same")(x)
-        x = layers.BatchNormalization()(x)
+        x = layers.BatchNormalization(momentum=0.6)(x)
         x = layers.ReLU()(x)
         x = layers.Conv2D(filters, 1, padding="same")(x)
-        x = layers.BatchNormalization()(x)
+        x = layers.BatchNormalization(momentum=0.6)(x)
         x = layers.ReLU()(x)
 
     return layers.GlobalAveragePooling2D(name="f_rgb")(x)
@@ -81,14 +81,14 @@ def _thermal_branch(thermal_input, widths=(8, 16)):
     upsampling. There are only 768 real input values, so this branch is
     deliberately shallow: two conv layers, the second strided, then GAP."""
     x = layers.Conv2D(widths[0], 3, padding="same")(thermal_input)
-    x = layers.BatchNormalization()(x)
+    x = layers.BatchNormalization(momentum=0.6)(x)
     x = layers.ReLU()(x)
 
     x = layers.DepthwiseConv2D(3, strides=2, padding="same")(x)
-    x = layers.BatchNormalization()(x)
+    x = layers.BatchNormalization(momentum=0.6)(x)
     x = layers.ReLU()(x)
     x = layers.Conv2D(widths[1], 1, padding="same")(x)
-    x = layers.BatchNormalization()(x)
+    x = layers.BatchNormalization(momentum=0.6)(x)
     x = layers.ReLU()(x)
 
     return layers.GlobalAveragePooling2D(name="f_thermal")(x)
