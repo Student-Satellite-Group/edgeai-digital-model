@@ -117,5 +117,74 @@ def run_visual_demo(sample_idx: int = 0, save_fig: bool = False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="EdgeAI Satellite Visual Demonstration")
     parser.add_argument("--sample", type=int, default=0, help="Sample index to display (0-103)")
+    parser.add_argument("--interactive", action="store_true", help="Continuously cycle through satellite passes like a live mission control")
+    parser.add_argument("--interval", type=float, default=1.5, help="Seconds per satellite snapshot in interactive mode")
     args = parser.parse_args()
-    run_visual_demo(sample_idx=args.sample)
+    
+    if args.interactive:
+        import time
+        manifest_path = os.path.join("data", "labeled", "manifest.csv")
+        with open(manifest_path, newline="", encoding="utf-8") as f:
+            total_samples = len(list(csv.DictReader(f)))
+        print(f"\n[MISSION CONTROL] Starting live orbital pass across {total_samples} ground zones...")
+        print("Close the window or press Ctrl+C in terminal to stop.")
+        plt.ion()
+        fig = plt.figure(figsize=(15, 8))
+        fig.patch.set_facecolor("#0b0f19")
+        engine = digital_model_pipeline.EdgeInferenceEngine()
+        
+        with open(manifest_path, newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+            
+        for i, row in enumerate(rows):
+            plt.clf()
+            rgb, thm, true_label = digital_model_pipeline.stage_load_sample(row)
+            pred_class, confidence, latency_ms = engine.predict(rgb, thm)
+            rgb_img = rgb[0]
+            thm_img = thm[0, :, :, 0]
+            import cv2
+            thm_resized = cv2.resize(thm_img, (128, 128), interpolation=cv2.INTER_LINEAR)
+            fused_img = np.clip(0.5 * rgb_img + 0.5 * cv2.merge([thm_resized] * 3), 0.0, 1.0)
+            
+            pred_text = "[CLOUD DETECTED]" if pred_class == 1 else "[CLEAR GROUND / VEGETATION]"
+            badge_color = "#38bdf8" if pred_class == 1 else "#4ade80"
+            
+            fig.suptitle(
+                f"EdgeAI Satellite Live Pass: {row.get('sample_id')} ({i+1}/{len(rows)})  |  Altitude: 500 km  |  Speed: 7.6 km/s",
+                fontsize=18, fontweight="bold", color="#f8fafc", y=0.96
+            )
+            ax1 = fig.add_subplot(1, 3, 1)
+            ax1.imshow(rgb_img)
+            ax1.set_title("1. Optical Camera\n(What Human Eyes See)", fontsize=13, color="#94a3b8", pad=10)
+            ax1.axis("off")
+            
+            ax2 = fig.add_subplot(1, 3, 2)
+            im2 = ax2.imshow(thm_img, cmap="inferno", aspect="auto")
+            ax2.set_title("2. Thermal Heat Camera\n(Heat Vision: Bright = Warm, Dark = Cold)", fontsize=13, color="#94a3b8", pad=10)
+            ax2.axis("off")
+            
+            ax3 = fig.add_subplot(1, 3, 3)
+            ax3.imshow(fused_img)
+            ax3.set_title("3. Fused Multi-Spectral\n(Combined Space Vision)", fontsize=13, color="#94a3b8", pad=10)
+            ax3.axis("off")
+            
+            info_box = (
+                f">> ONBOARD AI DECISION:  {pred_text}\n"
+                f"------------------------------------------------------------\n"
+                f"* AI Confidence       : {confidence*100:.1f}%\n"
+                f"* Processing Time     : {latency_ms:.2f} milliseconds (Instantaneous Edge Compute!)\n"
+                f"* Neural Network Size : 42.6 Kilobytes (Microchip Footprint)\n"
+                f"* Space Mission Status: LIVE PASS ACTIVE"
+            )
+            plt.figtext(
+                0.5, 0.05, info_box,
+                fontsize=12, family="monospace", color="#f1f5f9",
+                ha="center", va="bottom",
+                bbox=dict(boxstyle="round,pad=0.8", facecolor="#1e293b", edgecolor=badge_color, linewidth=2.5)
+            )
+            plt.tight_layout(rect=[0.02, 0.22, 0.98, 0.92])
+            plt.pause(args.interval)
+        plt.ioff()
+        plt.show()
+    else:
+        run_visual_demo(sample_idx=args.sample)
