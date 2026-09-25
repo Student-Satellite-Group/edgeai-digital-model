@@ -21,26 +21,26 @@
 
 | sample_id   | scene  | n_tie_pts | RMSE (px) | inlier_frac | status |
 |:------------|:------:|----------:|----------:|------------:|:-------|
-| sample_0001 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0003 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0006 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0016 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0023 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0027 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0044 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0048 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0054 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0055 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0057 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0059 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0061 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0063 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0072 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0076 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0087 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0096 | clear | 0 | N/A | 0.00% | insufficient_features |
-| sample_0097 | cloudy | 0 | N/A | 0.00% | insufficient_features |
-| sample_0099 | cloudy | 0 | N/A | 0.00% | insufficient_features |
+| sample_0001 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0003 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0006 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0016 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0023 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0027 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0044 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0048 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0054 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0055 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0057 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0059 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0061 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0063 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0072 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0076 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0087 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0096 | clear | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0097 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
+| sample_0099 | cloudy | 0 | N/A | 0.00% | insufficient_matches |
 
 ---
 

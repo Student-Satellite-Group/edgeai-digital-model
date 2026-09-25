@@ -202,8 +202,8 @@ def package_dataset(
                 dst_thermal = os.path.join(dst_dir, "thermal.tif")
 
                 os.makedirs(dst_dir, exist_ok=True)
-                _write_synthetic_optical(dst_optical)
-                _write_zero_thermal(dst_thermal)
+                _write_synthetic_optical(dst_optical, sid)
+                _write_synthetic_thermal(dst_thermal, sid)
 
                 records.append({
                     "sample_id":        sid,
@@ -250,12 +250,27 @@ def package_dataset(
 # Synthetic array writers (for pipeline validation without real tiles)
 # ---------------------------------------------------------------------------
 
-def _write_synthetic_optical(path: str) -> None:
-    """Write a noise-filled 128x128x3 uint16 GeoTIFF."""
+def _write_synthetic_optical(path: str, sample_id: str = "") -> None:
+    """Write a 128x128x3 uint16 GeoTIFF with discriminative signal matching synthetic label."""
+    import hashlib
     from rasterio.transform import from_bounds
     from rasterio.crs import CRS
-    rng = np.random.default_rng(seed=abs(hash(path)) % (2**32))
-    data = rng.integers(0, 4096, size=(3, 128, 128), dtype=np.uint16)
+    h = int(hashlib.sha256((sample_id or path).encode()).hexdigest(), 16)
+    is_cloud = 1 if (h % 100) < 40 else 0
+    rng = np.random.default_rng(seed=h % (2**32))
+
+    if is_cloud:
+        # Bright near-white (high reflectance across all 3 bands)
+        r = rng.integers(3000, 4090, size=(128, 128), dtype=np.uint16)
+        g = rng.integers(3000, 4090, size=(128, 128), dtype=np.uint16)
+        b = rng.integers(3000, 4090, size=(128, 128), dtype=np.uint16)
+    else:
+        # Ground / vegetation (low R, high G, low B)
+        r = rng.integers(300, 800, size=(128, 128), dtype=np.uint16)
+        g = rng.integers(1800, 2600, size=(128, 128), dtype=np.uint16)
+        b = rng.integers(300, 800, size=(128, 128), dtype=np.uint16)
+
+    data = np.stack([r, g, b], axis=0)
     meta = {
         "driver": "GTiff", "dtype": "uint16", "count": 3,
         "height": 128, "width": 128,
@@ -265,6 +280,33 @@ def _write_synthetic_optical(path: str) -> None:
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with rasterio.open(path, "w", **meta) as dst:
         dst.write(data)
+
+
+def _write_synthetic_thermal(path: str, sample_id: str = "") -> None:
+    """Write a 24x32x1 uint16 GeoTIFF with cold cloud vs warm ground temperatures."""
+    import hashlib
+    from rasterio.transform import from_bounds
+    from rasterio.crs import CRS
+    h = int(hashlib.sha256((sample_id or path).encode()).hexdigest(), 16)
+    is_cloud = 1 if (h % 100) < 40 else 0
+    rng = np.random.default_rng(seed=(h + 10000) % (2**32))
+
+    if is_cloud:
+        # Cold cloud top (100 - 500 DN)
+        t = rng.integers(100, 500, size=(1, 24, 32), dtype=np.uint16)
+    else:
+        # Warm ground (3000 - 3800 DN)
+        t = rng.integers(3000, 3800, size=(1, 24, 32), dtype=np.uint16)
+
+    meta = {
+        "driver": "GTiff", "dtype": "uint16", "count": 1,
+        "height": 24, "width": 32,
+        "crs": CRS.from_epsg(32643),
+        "transform": from_bounds(710000, 3140000, 711024, 3141024, 32, 24),
+    }
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with rasterio.open(path, "w", **meta) as dst:
+        dst.write(t)
 
 
 def _write_zero_thermal(path: str) -> None:
