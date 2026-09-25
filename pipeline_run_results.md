@@ -1,6 +1,6 @@
 # End-to-End Pipeline Execution Results (Task 6.3 / Issue #31)
 
-**Execution Timestamp:** 2026-09-25 16:34 UTC  
+**Execution Timestamp:** 2026-09-25 16:38 UTC  
 **Pipeline Script:** `digital_model_pipeline.py`  
 **Status:** [PASS] 100% COMPLETE
 
@@ -28,8 +28,8 @@
 | Total Dataset Samples | $\ge 100$ | **104** | [PASS] |
 | Unhandled Errors | 0 | **0** | [PASS] |
 | Classification Accuracy | $> 90.0\%$ | **100.0%** | [PASS] |
-| Mean Edge Inference Latency | $< 100$ ms/sample | **0.43 ms** | [PASS] |
-| Total Pipeline Throughput | — | **96.3 samples/sec** | [PASS] |
+| Mean Edge Inference Latency | $< 100$ ms/sample | **1.42 ms** | [PASS] |
+| Total Pipeline Throughput | — | **49.2 samples/sec** | [PASS] |
 
 ---
 
@@ -37,21 +37,21 @@
 
 | Sample ID | Pass ID | True Class | Pred Class | Confidence | Latency (ms) | Result |
 |:----------|:--------|:----------:|:----------:|:----------:|:------------:|:------:|
-| `sample_0000` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.59 | MATCH |
-| `sample_0001` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.39 | MATCH |
-| `sample_0002` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.38 | MATCH |
-| `sample_0003` | `pass_0000` | Cloud | Cloud | 0.9961 | 0.42 | MATCH |
-| `sample_0004` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.40 | MATCH |
-| `sample_0005` | `pass_0000` | Cloud | Cloud | 0.9961 | 0.40 | MATCH |
-| `sample_0006` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.38 | MATCH |
-| `sample_0007` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.36 | MATCH |
-| `sample_0008` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.37 | MATCH |
-| `sample_0009` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.36 | MATCH |
-| `sample_0010` | `pass_0000` | Cloud | Cloud | 0.9961 | 0.36 | MATCH |
-| `sample_0011` | `pass_0000` | Cloud | Cloud | 0.9961 | 0.37 | MATCH |
-| `sample_0012` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.53 | MATCH |
-| `sample_0013` | `pass_0000` | Cloud | Cloud | 0.9961 | 0.35 | MATCH |
-| `sample_0014` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.37 | MATCH |
+| `sample_0000` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.25 | MATCH |
+| `sample_0001` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.14 | MATCH |
+| `sample_0002` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.13 | MATCH |
+| `sample_0003` | `pass_0000` | Cloud | Cloud | 0.9961 | 1.16 | MATCH |
+| `sample_0004` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.20 | MATCH |
+| `sample_0005` | `pass_0000` | Cloud | Cloud | 0.9961 | 1.12 | MATCH |
+| `sample_0006` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.26 | MATCH |
+| `sample_0007` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.34 | MATCH |
+| `sample_0008` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.21 | MATCH |
+| `sample_0009` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.17 | MATCH |
+| `sample_0010` | `pass_0000` | Cloud | Cloud | 0.9961 | 1.55 | MATCH |
+| `sample_0011` | `pass_0000` | Cloud | Cloud | 0.9961 | 1.32 | MATCH |
+| `sample_0012` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 0.79 | MATCH |
+| `sample_0013` | `pass_0000` | Cloud | Cloud | 0.9961 | 1.22 | MATCH |
+| `sample_0014` | `pass_0000` | No-Cloud | No-Cloud | 0.9961 | 1.36 | MATCH |
 
 > *Showing first 15 samples of the full dataset execution.*
 
