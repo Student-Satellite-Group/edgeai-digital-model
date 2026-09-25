@@ -137,6 +137,9 @@ if __name__ == "__main__":
             rows = list(csv.DictReader(f))
             
         for i, row in enumerate(rows):
+            if not plt.fignum_exists(fig.number):
+                print("\n[MISSION CONTROL] Visualizer window closed. Demonstration ended.")
+                break
             plt.clf()
             rgb, thm, true_label = digital_model_pipeline.stage_load_sample(row)
             pred_class, confidence, latency_ms = engine.predict(rgb, thm)
@@ -185,6 +188,7 @@ if __name__ == "__main__":
             plt.tight_layout(rect=[0.02, 0.22, 0.98, 0.92])
             plt.pause(args.interval)
         plt.ioff()
-        plt.show()
+        if plt.fignum_exists(fig.number):
+            plt.show()
     else:
         run_visual_demo(sample_idx=args.sample)
