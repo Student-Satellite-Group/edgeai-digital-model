@@ -3,13 +3,21 @@ demo_visualizer.py — Interactive Multi-Scene Visual Demonstrator for EdgeAI Sa
 Supports:
   1. Scene 1 (Delhi Pass): Optical Cloud Filtering & Vegetation Mapping
   2. Scene 2 (Siberia Pass): Wildfire / Thermal Anomaly Front Detection
-  3. Interactive Slideshow Mode & PNG Export
+  3. Interactive Slideshow with Keyboard Controls (Pause, Step Forward/Back, Custom Delay)
+  4. PNG Export
+
+Keyboard Controls in Slideshow Mode:
+  - Spacebar        : Pause / Resume slideshow
+  - Right Arrow / D : Step forward to next sample
+  - Left Arrow  / A : Step backward to previous sample
+  - Q / Esc         : Exit cleanly
 
 Usage:
-    python demo_visualizer.py [--scene delhi|siberia] [--sample N] [--slideshow] [--save]
+    python demo_visualizer.py [--scene delhi|siberia] [--sample N] [--slideshow] [--delay 5.0] [--save]
 """
 
 import os
+import sys
 import time
 import argparse
 import numpy as np
@@ -18,12 +26,38 @@ import cv2
 
 from load_aggregated_data import (
     load_delhi_data,
-    load_siberia_fire_data,
-    prepare_fold_data
+    load_siberia_fire_data
 )
 from digital_model_pipeline import EdgeInferenceEngine
 
 MODELS_DIR = "models"
+
+
+class VisualizerController:
+    def __init__(self, initial_idx: int = 0, total_samples: int = 100, is_slideshow: bool = False):
+        self.idx = initial_idx
+        self.total = total_samples
+        self.paused = False
+        self.is_slideshow = is_slideshow
+        self.running = True
+        self.manual_step = False
+
+    def on_key(self, event):
+        if event.key in ["q", "escape"]:
+            self.running = False
+            plt.close("all")
+        elif event.key == " ":
+            self.paused = not self.paused
+            print(f"[{'PAUSED' if self.paused else 'RESUMED'}] Press Space to toggle, Right/Left arrows to step.")
+        elif event.key in ["right", "d", "n"]:
+            self.idx = (self.idx + 1) % self.total
+            self.manual_step = True
+        elif event.key in ["left", "a", "p"]:
+            self.idx = (self.idx - 1 + self.total) % self.total
+            self.manual_step = True
+
+    def on_close(self, event):
+        self.running = False
 
 
 def run_visual_demo(
@@ -31,7 +65,7 @@ def run_visual_demo(
     sample_idx: int = 0,
     save_fig: bool = False,
     slideshow: bool = False,
-    interval_s: float = 2.5
+    delay_s: float = 5.0
 ):
     # Load scene data
     if scene.lower() == "delhi":
@@ -41,7 +75,6 @@ def run_visual_demo(
         rgb_all = data["rgb"]
         thm_all = data["thm"]
         labels = data["y_cloud"]
-        scene_title = "Mission: Delhi Pass (Cloud & Surface Filtering)"
         class_names = {0: "CLEAR SKY / GROUND", 1: "CLOUD COVER DETECTED"}
         colors = {0: "#4ade80", 1: "#38bdf8"}
     else:
@@ -51,7 +84,6 @@ def run_visual_demo(
         rgb_all = data["rgb"]
         thm_all = data["thm"]
         labels = data["y_fire"]
-        scene_title = "Mission: Siberia Pass (Wildfire Thermal Anomaly Detection)"
         class_names = {0: "NOMINAL FOREST / NO FIRE", 1: "WILDFIRE THERMAL ANOMALY"}
         colors = {0: "#4ade80", 1: "#ef4444"}
 
@@ -67,15 +99,25 @@ def run_visual_demo(
     if thm_norm.ndim == 3:
         thm_norm = np.expand_dims(thm_norm, -1)
 
-    # Setup Matplotlib Interactive UI
+    # Setup Matplotlib UI
     plt.style.use("dark_background")
     fig = plt.figure(figsize=(16, 8.5))
     fig.patch.set_facecolor("#0b0f19")
 
-    indices = range(N) if slideshow else [sample_idx % N]
+    controller = VisualizerController(initial_idx=sample_idx % N, total_samples=N, is_slideshow=slideshow)
+    fig.canvas.mpl_connect("key_press_event", controller.on_key)
+    fig.canvas.mpl_connect("close_event", controller.on_close)
 
-    for idx in indices:
+    if slideshow:
+        print(f"\n=======================================================")
+        print(f" Slideshow Mode Active ({delay_s:.1f}s per pass)")
+        print(f" Controls: [Space] Pause/Resume | [->] Next | [<-] Prev | [Q] Quit")
+        print(f"=======================================================\n")
+
+    while controller.running:
+        idx = controller.idx
         plt.clf()
+
         rgb_raw = rgb_all[idx]
         thm_raw = thm_all[idx]
         y_true = labels[idx]
@@ -101,8 +143,9 @@ def run_visual_demo(
         fused_img = np.clip(fused_img, 0.0, 1.0)
 
         # Header Title
+        pause_status = " [PAUSED]" if controller.paused else ""
         fig.suptitle(
-            f"EdgeAI Dual-Payload Satellite Live Pass  |  Sample #{idx:04d} / {N:04d}  |  Altitude: 500 km",
+            f"EdgeAI Dual-Payload Satellite Live Pass  |  Sample #{idx:04d} / {N:04d}  |  Altitude: 500 km{pause_status}",
             fontsize=17, fontweight="bold", color="#f8fafc", y=0.96
         )
 
@@ -140,12 +183,13 @@ def run_visual_demo(
             f"  * AI Prediction Prob   : {confidence * 100:.1f}%\n"
             f"  * Edge Inference Time  : {latency_ms:.2f} ms (Target: < 100 ms)\n"
             f"  * Model Architecture   : Two-Branch Late Fusion CNN (Int8 Quantized: 43.7 KB)\n"
-            f"  * Sensor Payloads      : Sony IMX477 (RGB) + Melexis MLX90640 (24x32 Thermal)"
+            f"  * Sensor Payloads      : Sony IMX477 (RGB) + Melexis MLX90640 (24x32 Thermal)\n"
+            f"  * Slideshow Controls   : [Space] Pause/Resume | [->] Next | [<-] Prev | [Q] Quit"
         )
 
         fig.text(
             0.5, 0.08, info_box,
-            fontsize=11, family="monospace", color="#f8fafc",
+            fontsize=10.5, family="monospace", color="#f8fafc",
             ha="center", va="center",
             bbox=dict(boxstyle="round,pad=0.7", facecolor="#1e293b", edgecolor=badge_col, linewidth=2.5)
         )
@@ -159,11 +203,21 @@ def run_visual_demo(
             print(f"Saved visualization to {out_name}")
             return
 
-        if slideshow:
-            plt.pause(interval_s)
-        else:
+        if not slideshow:
             plt.show()
             break
+
+        # Slideshow step management with responsive pause & key handling
+        controller.manual_step = False
+        t_waited = 0.0
+        step_dt = 0.1
+        while controller.running and not controller.manual_step:
+            plt.pause(step_dt)
+            if not controller.paused:
+                t_waited += step_dt
+                if t_waited >= delay_s:
+                    controller.idx = (controller.idx + 1) % N
+                    break
 
 
 def main():
@@ -171,10 +225,21 @@ def main():
     parser.add_argument("--scene", type=str, default="siberia", choices=["delhi", "siberia"], help="Scene to demonstrate")
     parser.add_argument("--sample", type=int, default=0, help="Sample index")
     parser.add_argument("--slideshow", action="store_true", help="Run automated slideshow pass")
+    parser.add_argument("--delay", type=float, default=5.0, help="Slideshow transition delay in seconds (default: 5.0s)")
     parser.add_argument("--save", action="store_true", help="Save visualization to PNG")
     args = parser.parse_args()
 
-    run_visual_demo(scene=args.scene, sample_idx=args.sample, save_fig=args.save, slideshow=args.slideshow)
+    try:
+        run_visual_demo(
+            scene=args.scene,
+            sample_idx=args.sample,
+            save_fig=args.save,
+            slideshow=args.slideshow,
+            delay_s=args.delay
+        )
+    except KeyboardInterrupt:
+        print("\nSlideshow closed cleanly.")
+        plt.close("all")
 
 
 if __name__ == "__main__":
