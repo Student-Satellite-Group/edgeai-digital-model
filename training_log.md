@@ -1,81 +1,37 @@
-# Training Log — Cloud CNN (Issue #24 / Task 5.3)
+# Aggregated Multi-Modal Training & Cross-Validation Log
+**Generated:** 2026-09-26 10:13:56 UTC
+**Dataset:** Aggregated Multi-Modal Dataset (3,612 samples)
 
-**Generated:** 2026-09-25 16:25 UTC  
-**Note:** real manifest
+## Out-of-Fold (OOF) Benchmark Summary
 
-## Dataset Split
+| Task | Dataset | Samples (Pos / Total) | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|:-----|:--------|:---------------------:|:--------:|:---------:|:------:|:--------:|:-------:|
+| **Cloud** | Sentinel-2 Delhi | 735 / 1764 | **94.90%** | 0.9046 | 0.9810 | **0.9413** | **0.9929** |
+| **Vegetation** | Sentinel-2 Delhi | 462 / 933 | **92.18%** | 0.8898 | 0.9610 | **0.9240** | **0.9801** |
+| **Fire** | Landsat-9 Siberia | 134 / 1848 | **93.94%** | 0.5743 | 0.6343 | **0.6028** | **0.9130** |
 
-| Split | Samples |
-|:------|--------:|
-| Train | 71 |
-| Val   | 15 |
-| Test  | 18 |
-| Total | 104 |
+## Per-Fold Performance Breakdown
 
-## Training Curves
+### Task: Cloud
+| Fold | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|:----:|:--------:|:---------:|:------:|:--------:|:-------:|
+| Fold 0 | 95.24% | 0.8686 | 0.9675 | 0.9154 | 0.9927 |
+| Fold 1 | 93.10% | 0.8854 | 1.0000 | 0.9392 | 0.9910 |
+| Fold 2 | 94.37% | 0.9120 | 0.9828 | 0.9461 | 0.9941 |
+| Fold 3 | 96.90% | 0.9554 | 0.9615 | 0.9585 | 0.9961 |
 
-| Epoch | Train Loss | Train Acc | Val Loss | Val Acc |
-|------:|-----------:|----------:|---------:|--------:|
-|     1 | 0.5300 | 0.8310 | 0.3790 | 1.0000 |
-|     2 | 0.2553 | 0.9859 | 0.0940 | 1.0000 |
-|     3 | 0.1653 | 0.9718 | 0.0393 | 1.0000 |
-|     4 | 0.1383 | 0.9718 | 0.0200 | 1.0000 |
-|     5 | 0.0938 | 0.9859 | 0.0118 | 1.0000 |
-|     6 | 0.0591 | 1.0000 | 0.0075 | 1.0000 |
-|     7 | 0.0728 | 0.9859 | 0.0049 | 1.0000 |
-|     8 | 0.0356 | 1.0000 | 0.0034 | 1.0000 |
-|     9 | 0.0232 | 1.0000 | 0.0024 | 1.0000 |
-|    10 | 0.0226 | 1.0000 | 0.0018 | 1.0000 |
-|    11 | 0.0311 | 1.0000 | 0.0012 | 1.0000 |
-|    12 | 0.0167 | 1.0000 | 0.0009 | 1.0000 |
-|    13 | 0.0230 | 0.9859 | 0.0006 | 1.0000 |
-|    14 | 0.0101 | 1.0000 | 0.0005 | 1.0000 |
-|    15 | 0.0167 | 1.0000 | 0.0004 | 1.0000 |
-|    16 | 0.0086 | 1.0000 | 0.0003 | 1.0000 |
-|    17 | 0.0155 | 1.0000 | 0.0002 | 1.0000 |
-|    18 | 0.0092 | 1.0000 | 0.0001 | 1.0000 |
-|    19 | 0.0088 | 1.0000 | 0.0001 | 1.0000 |
-|    20 | 0.0067 | 1.0000 | 0.0001 | 1.0000 |
+### Task: Vegetation
+| Fold | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|:----:|:--------:|:---------:|:------:|:--------:|:-------:|
+| Fold 0 | 89.94% | 0.8765 | 1.0000 | 0.9342 | 0.9821 |
+| Fold 1 | 94.65% | 0.9273 | 0.8947 | 0.9107 | 0.9891 |
+| Fold 2 | 95.12% | 0.8841 | 0.9683 | 0.9242 | 0.9943 |
+| Fold 3 | 90.56% | 0.9032 | 0.9180 | 0.9106 | 0.9794 |
 
-## Validation Metrics
-
-| Metric    | Value   |
-|:----------|--------:|
-| Accuracy  | 1.0000 |
-| Precision | 1.0000 |
-| Recall    | 1.0000 |
-| F1-Score  | 1.0000 |
-
-### Confusion Matrix
-
-| | Pred No-Cloud | Pred Cloud |
-|:--|:---:|:---:|
-| **True No-Cloud** | 10 | 0 |
-| **True Cloud**    | 0 | 5 |
-
-## Test Metrics (Held-Out)
-
-| Metric    | Value   |
-|:----------|--------:|
-| Accuracy  | 1.0000 |
-| Precision | 1.0000 |
-| Recall    | 1.0000 |
-| F1-Score  | 1.0000 |
-
-### Confusion Matrix
-
-| | Pred No-Cloud | Pred Cloud |
-|:--|:---:|:---:|
-| **True No-Cloud** | 11 | 0 |
-| **True Cloud**    | 0 | 7 |
-
-## Acceptance Criteria
-
-- Model trains without memory issues: ✅
-- Test accuracy > 90%: ✅ (100.0%)
-- Metrics logged: ✅
-
-## Proxy Data Note
-
-All results are from synthetic proxy tiles (see `proxy_data_caveats.md`).
-Real Sentinel-2 tiles will replace these when `download_tiles.py` runs.
+### Task: Fire
+| Fold | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|:----:|:--------:|:---------:|:------:|:--------:|:-------:|
+| Fold 0 | 96.36% | 0.7826 | 0.5455 | 0.6429 | 0.9123 |
+| Fold 1 | 94.58% | 0.8214 | 0.6765 | 0.7419 | 0.9201 |
+| Fold 2 | 86.90% | 0.4643 | 0.7647 | 0.5778 | 0.8940 |
+| Fold 3 | 94.68% | 0.4390 | 0.5455 | 0.4865 | 0.9216 |

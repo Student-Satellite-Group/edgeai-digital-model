@@ -1,10 +1,10 @@
-# EdgeAI Satellite Digital Model
+# EdgeAI Satellite Digital Model (Release v1.1)
 
-[![Pipeline Status](https://img.shields.io/badge/Pipeline-100%25%20Verified-success)](file:///pipeline_run_results.md)
-[![Model Quantization](https://img.shields.io/badge/TFLite-Int8%20Quantized%20(42.6%20KB)-blue)](file:///quantization_delta.md)
-[![Mission Status](https://img.shields.io/badge/Status-Phase%206%20Complete-brightgreen)](#)
+[![Pipeline Status](https://img.shields.io/badge/Pipeline-3%2C612%20Samples%20Verified-success)](file:///pipeline_run_results.md)
+[![Model Quantization](https://img.shields.io/badge/TFLite-Int8%20Quantized%20(43.7%20KB)-blue)](file:///quantization_delta.md)
+[![Multi-Task](https://img.shields.io/badge/Tasks-Cloud%20%7C%20Veg%20%7C%20Wildfire-brightgreen)](#)
 
-A physics-informed, modular digital simulation and edge AI inference framework for a dual-payload (Optical RGB + Thermal Infrared) Earth observation CubeSat mission.
+A physics-informed, modular digital simulation and edge AI inference framework for a dual-payload (Optical RGB + Thermal Infrared MLX90640) Earth observation CubeSat mission.
 
 ---
 
@@ -32,32 +32,29 @@ git clone https://github.com/SohamB-42/edgeai-digital-model.git
 cd edgeai-digital-model
 
 # Install dependencies
-pip install numpy rasterio opencv-python scikit-image tensorflow shapely
+pip install numpy rasterio opencv-python scikit-image tensorflow scikit-learn
 ```
 
-### Running the End-to-End Pipeline
-Execute the master orchestrator to run orbital mechanics, sensor calculations, registration, fusion, and edge inference across the dataset:
+### Running the End-to-End Multi-Task Pipeline
+Execute the master orchestrator to run orbital mechanics, sensor calculations, registration, and edge inference across all 3,612 samples:
 
 ```bash
-python digital_model_pipeline.py --altitude 500 --lat 28.6 --lon 77.2 --radius 50
+# Run all tasks (Cloud, Vegetation, Wildfire)
+python digital_model_pipeline.py --altitude 500 --task all
 ```
 
-### Reproducing Component Stages
+### Running the Interactive Visual Demonstrator
+Launch the live satellite dashboard showcasing real-time optical RGB, thermal heatmap, and on-device Edge AI decision-making:
+
 ```bash
-# 1. Package and quality-check dataset
-python package_dataset.py
-python label_dataset.py
-python qc_dataset.py
+# Scene 1: Delhi Pass (Cloud & Vegetation Filtering)
+python demo_visualizer.py --scene delhi --sample 0
 
-# 2. Registration & RMSE analysis
-python tune_registration.py
-python rmse_harness.py
+# Scene 2: Siberia Pass (Wildfire Thermal Anomaly Detection)
+python demo_visualizer.py --scene siberia --sample 25
 
-# 3. Train CNN & Quantize to Int8 TFLite
-python train_pipeline.py --epochs 20 --batch 8
-python evaluate_float32.py
-python quantize_model.py
-python quantization_delta.py
+# Automated Live Slideshow Mode
+python demo_visualizer.py --scene siberia --slideshow
 ```
 
 ---
@@ -70,21 +67,21 @@ graph TD
         OM[orbital_model.py] -->|Altitude, Period, SSO Inclination| OS[Overpass Schedule]
     end
 
-    subgraph "Phase 2 & 3: Sensors & Data Ingestion"
+    subgraph "Phase 2 & 3: Sensors & Aggregated Data"
         SM[sensor_model.py] -->|GSD & Swath Computation| GS[Ground Sampling]
-        GS --> PD[package_dataset.py]
-        PD --> LD[label_dataset.py / SCL Rules]
-        LD --> QC[qc_dataset.py]
+        GS --> AD[load_aggregated_data.py / 3,612 Patches]
+        AD --> D1[Delhi Sentinel-2 / Landsat-9: Cloud & Veg]
+        AD --> D2[Siberia Landsat-9: Wildfire Fronts]
     end
 
     subgraph "Phase 4: Registration & Fusion"
-        QC --> REG[registration.py / ORB RANSAC]
+        D1 & D2 --> REG[registration.py / ORB RANSAC]
         REG --> FUS[fusion.py / Weighted Visual Blend]
     end
 
     subgraph "Phase 5 & 6: Edge AI Inference"
-        REG --> CNN[Two-Branch Late Fusion CNN]
-        CNN --> QNT[Int8 TFLite Engine / 42.6 KB]
+        REG --> CNN[Two-Branch Late Fusion CNN / 24x32 MLX90640]
+        CNN --> QNT[Int8 TFLite Engine / 43.7 KB]
         QNT --> PIP[digital_model_pipeline.py]
         PIP --> OUT[pipeline_run_results.md]
     end
@@ -92,55 +89,45 @@ graph TD
 
 ---
 
-## 4. Subsystem Breakdown
+## 4. Multi-Task Benchmark Summary
+
+| Mission Task | Dataset | Samples (Pos / Total) | Accuracy | Precision | Recall | F1-Score | Int8 Latency | Int8 Size |
+|:-------------|:--------|:---------------------:|:--------:|:---------:|:------:|:--------:|:------------:|:---------:|
+| **Cloud Detection** | Sentinel-2 Delhi | 735 / 1,764 | **98.13%** | 0.9705 | 0.9850 | **0.9777** | **0.15 ms** | **43.7 KB** |
+| **Vegetation Mapping** | Sentinel-2 Delhi | 462 / 933 | **81.67%** | 0.7299 | **1.0000** | **0.8438** | **0.27 ms** | **43.7 KB** |
+| **Wildfire Detection** | Landsat-9 Siberia | 134 / 1,848 | **95.24%** | 0.6643 | 0.6940 | **0.6788** | **0.20 ms** | **43.7 KB** |
+
+*All spatial 4-fold cross-validations enforce zero geographic data leakage between training and testing folds.*
+
+---
+
+## 5. Subsystem Breakdown
 
 | Subsystem | Module | Primary Purpose | Key Output / Metric |
 |:----------|:-------|:----------------|:--------------------|
 | **Orbital Mechanics** | [`orbital_model.py`](file:///orbital_model.py) | Closed-form circular orbit propagation, Keplerian period, and J2 SSO inclination | Period: `94.47 min`, SSO Inc: `97.39°` |
-| **Sensor Geometry** | [`sensor_model.py`](file:///sensor_model.py) | GSD & ground swath calculation from focal length and detector pitch | Optical GSD: `15.5 m`, Thermal GSD: `315.8 m` |
-| **Data Packaging** | [`package_dataset.py`](file:///package_dataset.py) | Ingests multi-modal patches into structured `data/labeled/` directories | 104 standardized GeoTIFF pairs |
-| **Dataset Labeling** | [`label_dataset.py`](file:///label_dataset.py) | Assigns cloud/vegetation labels using Sentinel-2 SCL rules | Manifest with ground-truth classes |
-| **Quality Control** | [`qc_dataset.py`](file:///qc_dataset.py) | Validates GeoTIFF dimensions, CRS, non-zero variance, and manifest paths | 100% pass rate (`qc_report.md`) |
-| **Registration** | [`registration.py`](file:///registration.py) | ORB keypoint detection and RANSAC homography estimation | Alignment homography matrix |
+| **Sensor Geometry** | [`sensor_model.py`](file:///sensor_model.py) | GSD & ground swath calculation for Sony IMX477 and Melexis MLX90640 | Optical GSD: `15.5 m`, Thermal GSD: `315.8 m` |
+| **Data Loader** | [`load_aggregated_data.py`](file:///load_aggregated_data.py) | Standardized multi-scene loader with fold-isolated thermal normalization | 3,612 multi-spectral patches |
+| **Registration** | [`registration.py`](file:///registration.py) | ORB keypoint detection and RANSAC homography bounding crop | Alignment homography matrix |
 | **Visual Fusion** | [`fusion.py`](file:///fusion.py) | Generates weighted pixel blend frames for logging & telemetry | Fused visual product |
-| **CNN Architecture** | [`model_architecture.py`](file:///model_architecture.py) | Two-branch late-fusion CNN (`19,090` parameters) | Parameter budget $< 2\text{M}$ params |
-| **Training & Quantization** | [`train_pipeline.py`](file:///train_pipeline.py), [`quantize_model.py`](file:///quantize_model.py) | Float32 model training and post-training Int8 TFLite conversion | `model_int8.tflite` (`42.6 KB`) |
-| **Master Orchestrator** | [`digital_model_pipeline.py`](file:///digital_model_pipeline.py) | Unified end-to-end execution of all pipeline stages | Complete run on 104 samples |
+| **CNN Architecture** | [`model_architecture.py`](file:///model_architecture.py) | Two-branch late-fusion CNN (`19,090` parameters, `(24, 32, 1)` thermal shape) | Budget $< 2\text{M}$ params, `3.95M` MACs |
+| **Training Pipeline** | [`train_aggregated_pipeline.py`](file:///train_aggregated_pipeline.py) | Multi-task spatial 4-fold CV training across Cloud, Vegetation, and Wildfire | Models exported to `models/` |
+| **Quantization** | [`quantize_model.py`](file:///quantize_model.py), [`quantization_delta.py`](file:///quantization_delta.py) | Full integer post-training Int8 TFLite conversion & delta analysis | `43.7 KB` flatbuffer, delta $< 0.22\text{ pp}$ |
+| **Master Orchestrator** | [`digital_model_pipeline.py`](file:///digital_model_pipeline.py) | Unified end-to-end execution across all 3,612 samples | `3,612/3,612` samples with 0 errors |
+| **Visual Demonstrator** | [`demo_visualizer.py`](file:///demo_visualizer.py) | Live interactive mission simulator (Delhi & Siberia passes) | Interactive UI & PNG exports |
 
 ---
 
-## 5. PROVISIONAL Assumptions Register
+## 6. What Changes When Hardware Arrives (Digital Shadow)
 
-As documented in [`PROVISIONAL_LABELS.md`](file:///PROVISIONAL_LABELS.md), the following parameters are provisional placeholders awaiting physical payload hardware delivery:
-
-| Parameter | Provisional Value | Source Document | True Value Lock Condition |
-|:----------|:------------------|:----------------|:--------------------------|
-| Mission Altitude | `500.0 km` | Phase 1 baseline | Launch vehicle manifest confirmation |
-| Target AOI | `28.6°N, 77.2°E` (New Delhi) | Task 1.5 specification | Ground station contract signoff |
-| Optical Camera | Sony IMX477 ($1.55\,\mu\text{m}$, $f=50\,\text{mm}$) | [`sensor_specs.json`](file:///sensor_specs.json) | Flight camera procurement & bench test |
-| Thermal Camera | FLIR Lepton 3.5 ($12\,\mu\text{m}$, $f=19\,\text{mm}$) | [`sensor_specs.json`](file:///sensor_specs.json) | Thermal payload procurement & radiometric calibration |
-| Training Imagery | Proxy Sentinel-2 / Landsat | [`proxy_data_caveats.md`](file:///proxy_data_caveats.md) | In-orbit commissioning imagery |
-
----
-
-## 6. What Changes When Hardware Arrives
-
-When physical hardware is received (transition to **Digital Shadow**), follow [`hardware_handoff.md`](file:///hardware_handoff.md):
+When physical hardware is received, follow [`hardware_handoff.md`](file:///hardware_handoff.md):
 
 1. **Update Camera Parameters**: Modify [`sensor_specs.json`](file:///sensor_specs.json) with bench-calibrated focal lengths and detector pitch.
 2. **Re-run GSD & Swath Calculations**: Execute `sensor_model.py` to update mission planning tables.
-3. **Calibrate Registration Matrices**: Apply physical lens distortion coefficients ($k_1, k_2, p_1, p_2$) in `registration.py`.
-4. **Deploy Int8 Model to Embedded MCU/NPU**: Flash [`models/model_int8.tflite`](file:///models/model_int8.tflite) (`42.6 KB`) to target edge hardware (e.g., ESP32-S3 / STM32N6 / Coral Edge TPU).
+3. **Calibrate Registration Matrices**: Apply physical lens distortion coefficients ($k_1, k_2$) in `registration.py`.
+4. **Deploy Int8 Model to Embedded MCU/NPU**: Flash [`models/model_cloud_int8.tflite`](file:///models/model_cloud_int8.tflite) and [`models/model_fire_int8.tflite`](file:///models/model_fire_int8.tflite) (`43.7 KB`) to target edge hardware (e.g., ESP32-S3 / STM32N6 / Coral Edge TPU).
 5. **Clear Provisional Flags**: Toggle `PROVISIONAL = False` in `sensor_model.py`.
 
 ---
-
-## 7. Verification & Benchmark Summary
-
-- **End-to-End Execution**: 104/104 samples processed successfully with **0 errors**.
-- **Accuracy**: **100.0%** classification accuracy across the dataset.
-- **Model Footprint**: **42.6 KB** Int8 quantized TFLite flatbuffer (47.9% reduction from Float32).
-- **Quantization Delta**: **0.00 pp** accuracy drop from Float32 baseline.
-- **Edge Latency**: **0.43 ms** average inference latency per sample.
 
 *For detailed execution logs, see [`pipeline_run_results.md`](file:///pipeline_run_results.md) and [`training_log.md`](file:///training_log.md).*

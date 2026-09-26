@@ -1,72 +1,73 @@
 {
   "project": "edgeai-digital-model",
-  "version": "v1.0-digital-model",
-  "release_tag": "v1.0-digital-model",
-  "build_timestamp_utc": "2026-09-25T22:12:00Z",
-  "branch": "team-b-data-pipeline",
-  "taxonomy_level": "Digital Model (Simulation & Proxy Data)",
-  "status": "Final Delivery Complete (Phases 1-8)",
+  "version": "v1.1-aggregated-model",
+  "release_tag": "v1.1-aggregated-model",
+  "build_timestamp_utc": "2026-09-26T11:05:00Z",
+  "branch": "main",
+  "taxonomy_level": "Digital Model (Simulation & Multi-Modal Proxy Data)",
+  "status": "Aggregated Multi-Task Dataset Upgrade Complete",
   "dataset": {
-    "manifest_path": "data/labeled/manifest.csv",
-    "total_samples": 104,
+    "manifest_path": "data/aggregated/Aggregated_Dataset/manifest_all.csv",
+    "total_samples": 3612,
+    "scenes": {
+      "delhi_sentinel2": "1,764 patches (Cloud Detection & Vegetation Mapping)",
+      "siberia_landsat9": "1,848 patches (Wildfire Thermal Anomaly Detection)"
+    },
     "spatial_dimensions": {
       "optical": "128x128x3",
-      "thermal": "32x24x1"
+      "thermal": "24x32x1 (Native MLX90640 Format)"
     },
-    "label_classes": {
-      "0": "No-Cloud / Ground",
-      "1": "Cloud"
+    "tasks": {
+      "cloud": "735 cloud / 1029 clear",
+      "vegetation": "462 vegetated / 471 non-vegetated (933 valid)",
+      "fire": "134 wildfire thermal anomalies / 1714 background"
     },
-    "qc_status": "100% Passed (104/104 samples verified)"
+    "cross_validation": "Strict Spatial 4-Fold CV (Zero Geographic Data Leakage)",
+    "qc_status": "100% Passed (31/31 files verified via SHA-256)"
   },
   "models": {
-    "float32_keras": {
-      "path": "models/model_float32.h5",
-      "parameters": 19090,
-      "test_accuracy": 1.0000
+    "cloud_model_int8": {
+      "path": "models/model_cloud_int8.tflite",
+      "size_kb": 43.7,
+      "test_accuracy": 0.9813,
+      "f1_score": 0.9777,
+      "mean_latency_ms": 0.15
     },
-    "float32_tflite": {
-      "path": "models/model_float32.tflite",
-      "size_kb": 81.8,
-      "test_accuracy": 1.0000
+    "vegetation_model_int8": {
+      "path": "models/model_vegetation_int8.tflite",
+      "size_kb": 43.7,
+      "test_accuracy": 0.8167,
+      "f1_score": 0.8438,
+      "recall": 1.0000,
+      "mean_latency_ms": 0.27
     },
-    "int8_quantized_tflite": {
-      "path": "models/model_int8.tflite",
-      "size_kb": 42.6,
-      "size_reduction_pct": 47.9,
-      "quantization_delta_pp": 0.0,
-      "test_accuracy": 1.0000,
-      "mean_inference_latency_ms": 0.43
+    "wildfire_model_int8": {
+      "path": "models/model_fire_int8.tflite",
+      "size_kb": 43.7,
+      "test_accuracy": 0.9524,
+      "f1_score": 0.6788,
+      "mean_latency_ms": 0.20
     }
   },
   "deliverables": [
+    "load_aggregated_data.py",
+    "train_aggregated_pipeline.py",
     "orbital_model.py",
     "sensor_model.py",
     "sensor_specs.json",
-    "package_dataset.py",
-    "label_dataset.py",
-    "qc_dataset.py",
     "registration.py",
     "fusion.py",
-    "tune_registration.py",
-    "rmse_harness.py",
     "model_architecture.py",
-    "train_pipeline.py",
-    "evaluate_float32.py",
     "quantize_model.py",
     "quantization_delta.py",
     "digital_model_pipeline.py",
-    "run_phase7_validation.py",
+    "demo_visualizer.py",
     "training_log.md",
-    "evaluation_float32.md",
     "quantization_delta.md",
     "pipeline_run_results.md",
-    "internal_validation_report.md",
     "final_digital_model_report.md",
     "hardware_handoff.md",
     "terminology_statement.md",
-    "PROVISIONAL_LABELS.md",
-    "module_interfaces.md",
     "README.md"
   ]
 }

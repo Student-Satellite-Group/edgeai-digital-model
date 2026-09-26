@@ -48,7 +48,7 @@ import tensorflow as tf
 from tensorflow.keras import layers, Model
 
 RGB_INPUT_SHAPE = (128, 128, 3)
-THERMAL_INPUT_SHAPE = (32, 24, 1)
+THERMAL_INPUT_SHAPE = (24, 32, 1)
 
 
 def _rgb_branch(rgb_input, widths=(16, 32, 64, 128)):
