@@ -1,0 +1,64 @@
+==================== LC09_L2SP_202032_20260720_02_T1
+LC09_L2SP_202032_20260720_02_T1 swir22: 98 MB in 201s
+LC09_L2SP_202032_20260720_02_T1 nir08: 97 MB in 353s
+LC09_L2SP_202032_20260720_02_T1 lwir11: 90 MB in 220s
+DONE LC09_L2SP_202032_20260720_02_T1
+ 
+LC09_L2SP_202032_20260720_02_T1 | scene 7991 x 7881
+valid SR px: 40.7 M | SWIR fire pixels: 1380
+connected fire clusters: 450
+ST fill (DN=0) inside valid SR area: 0.1469% of px
+ST fill at SWIR-fire pixels: 0.0%
+ST saturated-high (>=65000) at fire pixels: 0.0%
+ST at fire px (valid only): median 322.2 K, p90 327.7 K, max 329.8 K | scene median 318.8 K
+
+patches: 3782 total | positive (>=2 fire px): 163 | ambiguous (1 px): 105 | negative (0): 3514
+  thermal contrast (max - median of 24x32 grid, K) positive n= 158 | median 5.89 | p25 4.92 | p75 7.46 | p90 10.69
+  thermal contrast (max - median of 24x32 grid, K) negative n=2119 | median 6.62 | p25 5.09 | p75 8.87 | p90 11.22
+  mean fraction of thermal missing in positive patches: 0.010 | negative: 0.369
+SUMMARY LC09_L2SP_202032_20260720_02_T1 | positive patches 163 (with thermal 158) | negative 3514 | fire px 1380 | thermal-contrast AUC 0.432 | ST fill at fire px 0.0%
+ 
+==================== LC09_L2SP_045029_20260724_02_T1
+LC09_L2SP_045029_20260724_02_T1 swir22: 92 MB in 68s
+LC09_L2SP_045029_20260724_02_T1 nir08: 94 MB in 438s
+LC09_L2SP_045029_20260724_02_T1 lwir11: 89 MB in 151s
+DONE LC09_L2SP_045029_20260724_02_T1
+ 
+LC09_L2SP_045029_20260724_02_T1 | scene 7811 x 7701
+valid SR px: 40.7 M | SWIR fire pixels: 4314
+connected fire clusters: 604
+ST fill (DN=0) inside valid SR area: 0.0000% of px
+ST fill at SWIR-fire pixels: 0.0%
+ST saturated-high (>=65000) at fire pixels: 1.4%
+ST at fire px (valid only): median 324.8 K, p90 347.1 K, max 373.0 K | scene median 312.6 K
+
+patches: 3660 total | positive (>=2 fire px): 121 | ambiguous (1 px): 47 | negative (0): 3492
+  thermal contrast (max - median of 24x32 grid, K) positive n= 119 | median 9.14 | p25 7.04 | p75 12.35 | p90 18.38
+  thermal contrast (max - median of 24x32 grid, K) negative n=2231 | median 8.21 | p25 5.79 | p75 11.45 | p90 14.37
+  mean fraction of thermal missing in positive patches: 0.005 | negative: 0.336
+SUMMARY LC09_L2SP_045029_20260724_02_T1 | positive patches 121 (with thermal 119) | negative 3492 | fire px 4314 | thermal-contrast AUC 0.590 | ST fill at fire px 0.0%
+ 
+==================== LC09_L2SP_158014_20260817_02_T1
+LC09_L2SP_158014_20260817_02_T1 swir22: 92 MB in 211s
+LC09_L2SP_158014_20260817_02_T1 nir08: 96 MB in 834s
+LC09_L2SP_158014_20260817_02_T1 lwir11: 77 MB in 581s
+DONE LC09_L2SP_158014_20260817_02_T1
+ 
+LC09_L2SP_158014_20260817_02_T1 | scene 8371 x 8321
+valid SR px: 40.9 M | SWIR fire pixels: 21021
+connected fire clusters: 1485
+ST fill (DN=0) inside valid SR area: 11.2215% of px
+ST fill at SWIR-fire pixels: 6.6%
+ST saturated-high (>=65000) at fire pixels: 0.6%
+ST at fire px (valid only): median 313.3 K, p90 332.0 K, max 373.0 K | scene median 299.1 K
+
+patches: 4225 total | positive (>=2 fire px): 194 | ambiguous (1 px): 12 | negative (0): 4019
+  thermal contrast (max - median of 24x32 grid, K) positive n= 134 | median 16.27 | p25 9.38 | p75 23.91 | p90 38.11
+  thermal contrast (max - median of 24x32 grid, K) negative n=1714 | median 3.02 | p25 2.41 | p75 4.08 | p90 5.38
+  mean fraction of thermal missing in positive patches: 0.176 | negative: 0.490
+SUMMARY LC09_L2SP_158014_20260817_02_T1 | positive patches 194 (with thermal 134) | negative 4019 | fire px 21021 | thermal-contrast AUC 0.964 | ST fill at fire px 6.6%
+ 
+==================== LC09_L2SP_046025_20260731_02_T1
+ 
+ 
+ALL DONE

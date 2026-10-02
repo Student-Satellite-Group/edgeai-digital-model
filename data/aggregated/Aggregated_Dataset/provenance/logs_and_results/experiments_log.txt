@@ -1,0 +1,15 @@
+2026-09-23 23:00:51.704861: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-09-23 23:00:57.889813: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[     1s] untrained reference done
+WARNING:tensorflow:5 out of the last 19 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000015302527560> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 22 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000015302527560> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+[   395s] E2 cloud: {'n': 1764, 'acc': 0.9257369614512472, 'majority': np.float64(0.5833333333333333), 'bal_acc': 0.9272108843537414, 'precision': 0.8911917098445595, 'recall': 0.9360544217687075, 'f1': 0.9130723291307232, 'tp': 688, 'fp': 84, 'fn': 47, 'tn': 945}
+[   629s] E2 veg: {'n': 933, 'acc': 0.7491961414790996, 'majority': np.float64(0.504823151125402), 'bal_acc': 0.7469807262800894, 'precision': 0.956, 'recall': 0.5173160173160173, 'f1': 0.6713483146067416, 'tp': 239, 'fp': 11, 'fn': 223, 'tn': 460}
+[   759s] E1 cloud RGB-only seed0: acc=0.635 f1=0.000
+[   886s] E1 cloud RGB-only seed1: acc=0.635 f1=0.000
+[  1014s] E1 cloud RGB-only seed2: acc=0.635 f1=0.000
+[  1143s] E1 cloud RGB+thermal seed0: acc=0.635 f1=0.000
+[  1275s] E1 cloud RGB+thermal seed1: acc=0.635 f1=0.000
+[  1406s] E1 cloud RGB+thermal seed2: acc=0.635 f1=0.000
+[  1509s] E1 veg RGB-only seed0: acc=0.530 f1=0.536

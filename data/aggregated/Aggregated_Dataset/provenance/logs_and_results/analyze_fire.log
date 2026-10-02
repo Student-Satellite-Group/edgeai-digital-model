@@ -1,0 +1,56 @@
+== 1. Seed-averaged out-of-fold scores (average of the 3 seeds' probabilities) ==
+  rgb      ROC-AUC 0.802 | AP 0.285
+  thermal  ROC-AUC 0.928 | AP 0.706
+  both     ROC-AUC 0.911 | AP 0.658
+
+== 2. Operating point at 90% specificity (seed-averaged) ==
+  rgb      TP  66 FN  68 FP 172 TN 1542 | recall 0.493 | precision 0.277
+  thermal  TP 108 FN  26 FP 172 TN 1542 | recall 0.806 | precision 0.386
+  both     TP 107 FN  27 FP 172 TN 1542 | recall 0.799 | precision 0.384
+
+== 3. Per-fold ROC-AUC / AP (mean over 3 seeds); fold n / positives ==
+  fold 0 n= 549 pos=33 | rgb: 0.770/0.284  thermal: 0.916/0.752  both: 0.910/0.629  
+  fold 1 n= 295 pos=34 | rgb: 0.811/0.392  thermal: 0.940/0.839  both: 0.914/0.793  
+  fold 2 n= 290 pos=34 | rgb: 0.770/0.406  thermal: 0.958/0.869  both: 0.876/0.711  
+  fold 3 n= 714 pos=33 | rgb: 0.776/0.136  thermal: 0.912/0.499  both: 0.892/0.455  
+
+== 4. Paired per-seed comparison (thermal-only minus fused) ==
+  seed 0: dROC-AUC +0.051 | dAP +0.155
+  seed 1: dROC-AUC +0.008 | dAP -0.005
+  seed 2: dROC-AUC +0.028 | dAP +0.083
+
+== 5. Untrained single-number statistics (no fitting; same 1,848 patches) ==
+  thermal contrast (max - median)    ROC-AUC 0.964 | AP 0.857
+  thermal max                        ROC-AUC 0.963 | AP 0.883
+  thermal p95 - median               ROC-AUC 0.873 | AP 0.488
+  thermal std                        ROC-AUC 0.855 | AP 0.371
+  thermal mean                       ROC-AUC 0.767 | AP 0.361
+  RGB mean brightness                ROC-AUC 0.644 | AP 0.112
+  RGB red mean                       ROC-AUC 0.652 | AP 0.116
+  RGB green mean                     ROC-AUC 0.587 | AP 0.098
+  RGB blue mean                      ROC-AUC 0.701 | AP 0.123
+  RGB std                            ROC-AUC 0.747 | AP 0.239
+
+== 6. Spatial-block bootstrap (resampling the 37 38-km blocks, B=1000), 95% intervals ==
+  rgb      ROC-AUC 0.802 [0.731, 0.859] | AP 0.285 [0.135, 0.460]
+  thermal  ROC-AUC 0.928 [0.890, 0.954] | AP 0.706 [0.516, 0.821]
+  both     ROC-AUC 0.911 [0.865, 0.939] | AP 0.658 [0.475, 0.775]
+  contrast stat ROC-AUC 0.964 [0.940, 0.979] | AP 0.857 [0.738, 0.920]
+  paired differences (same resamples):
+    thermal - both: dROC-AUC +0.018 [-0.005, 0.046] (frac>0 0.94) | dAP +0.050 [0.003, 0.104] (frac>0 0.98)
+    thermal - rgb: dROC-AUC +0.128 [0.064, 0.193] (frac>0 1.00) | dAP +0.409 [0.300, 0.499] (frac>0 1.00)
+    both - rgb: dROC-AUC +0.110 [0.064, 0.157] (frac>0 1.00) | dAP +0.359 [0.278, 0.436] (frac>0 1.00)
+    contrast stat - thermal CNN: dROC-AUC +0.036 [0.013, 0.063] (frac>0 1.00)
+
+== 7. Dose-response: thermal contrast (K) by number of SWIR fire pixels in the patch ==
+  0 (negative)  n=1714 | contrast median   3.02 K (p25  2.41, p75  4.08) | max-temp median  302.4 K
+  2-3           n=   6 | contrast median   6.91 K (p25  6.48, p75  7.52) | max-temp median  307.0 K
+  4-7           n=  13 | contrast median   4.38 K (p25  3.31, p75  6.17) | max-temp median  305.2 K
+  8-15          n=   7 | contrast median   7.80 K (p25  4.35, p75  8.97) | max-temp median  307.7 K
+  16-63         n=  24 | contrast median  11.95 K (p25  7.73, p75 15.01) | max-temp median  311.6 K
+  64+           n=  84 | contrast median  20.52 K (p25 16.29, p75 30.59) | max-temp median  320.7 K
+  fire-pixel count in positive patches: median 105, p90 286, max 518
+
+== 8. Where does the thermal CNN disagree with the contrast statistic? ==
+  at 90% specificity: contrast stat finds 123/134, thermal CNN finds 108/134, both 107, CNN-only 1, stat-only 16
+  base rate 0.0725 | positives 134 | negatives 1714 | blocks 37

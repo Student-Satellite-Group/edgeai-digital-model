@@ -1,0 +1,16 @@
+2026-09-24 15:32:49.748189: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+N 1848 | positives 134 | fold sizes [549, 295, 290, 714] | fold positives [33, 34, 34, 33]
+2026-09-24 15:33:23.796667: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING:tensorflow:5 out of the last 9 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001FF7E486200> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 11 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001FF7E486200> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+[  216s] seed0 rgb      ROC-AUC 0.731  AP 0.266  bestF1 0.331  recall@spec90 0.410
+[  353s] seed0 thermal  ROC-AUC 0.933  AP 0.731  bestF1 0.717  recall@spec90 0.843
+[  483s] seed0 both     ROC-AUC 0.882  AP 0.576  bestF1 0.561  recall@spec90 0.739
+[  783s] seed1 rgb      ROC-AUC 0.732  AP 0.190  bestF1 0.306  recall@spec90 0.358
+[ 1157s] seed1 thermal  ROC-AUC 0.906  AP 0.640  bestF1 0.635  recall@spec90 0.806
+[ 1524s] seed1 both     ROC-AUC 0.898  AP 0.645  bestF1 0.618  recall@spec90 0.754
+[ 1896s] seed2 rgb      ROC-AUC 0.791  AP 0.245  bestF1 0.337  recall@spec90 0.433
+[ 2220s] seed2 thermal  ROC-AUC 0.914  AP 0.678  bestF1 0.667  recall@spec90 0.791
+[ 2411s] seed2 both     ROC-AUC 0.886  AP 0.595  bestF1 0.557  recall@spec90 0.716
+DONE

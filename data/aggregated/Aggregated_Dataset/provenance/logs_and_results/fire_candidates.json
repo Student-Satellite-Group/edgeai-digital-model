@@ -1,0 +1,1742 @@
+[
+ {
+  "id": "MOD14A2.A2026201.h10v03.061.2026210040819",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 1481,
+  "clusters": 36,
+  "biggest": 696,
+  "lon": -121.711,
+  "lat": 51.158
+ },
+ {
+  "id": "MOD14A2.A2026201.h17v04.061.2026210033458",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 1479,
+  "clusters": 40,
+  "biggest": 675,
+  "lon": -4.543,
+  "lat": 40.361
+ },
+ {
+  "id": "MOD14A2.A2026209.h10v04.061.2026218124325",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 1931,
+  "clusters": 63,
+  "biggest": 654,
+  "lon": -119.639,
+  "lat": 48.722
+ },
+ {
+  "id": "MOD14A2.A2026201.h09v04.061.2026210035319",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 4586,
+  "clusters": 125,
+  "biggest": 581,
+  "lon": -120.625,
+  "lat": 44.513
+ },
+ {
+  "id": "MOD14A2.A2026209.h22v02.061.2026218130611",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 4793,
+  "clusters": 246,
+  "biggest": 566,
+  "lon": 117.847,
+  "lat": 66.014
+ },
+ {
+  "id": "MOD14A2.A2026209.h10v03.061.2026218125737",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 1062,
+  "clusters": 53,
+  "biggest": 488,
+  "lon": -121.508,
+  "lat": 51.214
+ },
+ {
+  "id": "MOD14A2.A2026225.h21v02.061.2026234004111",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 5516,
+  "clusters": 298,
+  "biggest": 457,
+  "lon": 76.183,
+  "lat": 65.491
+ },
+ {
+  "id": "MOD14A2.A2026209.h09v04.061.2026218123716",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 3341,
+  "clusters": 98,
+  "biggest": 449,
+  "lon": -117.914,
+  "lat": 43.688
+ },
+ {
+  "id": "MOD14A2.A2026209.h09v05.061.2026218123451",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 696,
+  "clusters": 40,
+  "biggest": 398,
+  "lon": -112.346,
+  "lat": 38.775
+ },
+ {
+  "id": "MOD14A2.A2026193.h17v04.061.2026201235416",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 589,
+  "clusters": 21,
+  "biggest": 323,
+  "lon": -3.05,
+  "lat": 41.101
+ },
+ {
+  "id": "MOD14A2.A2026201.h24v02.061.2026210035847",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 501,
+  "clusters": 20,
+  "biggest": 319,
+  "lon": 164.398,
+  "lat": 66.767
+ },
+ {
+  "id": "MOD14A2.A2026201.h10v04.061.2026210032211",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 1111,
+  "clusters": 50,
+  "biggest": 282,
+  "lon": -119.194,
+  "lat": 48.214
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v02.061.2026210043716",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 2837,
+  "clusters": 271,
+  "biggest": 272,
+  "lon": -122.24,
+  "lat": 63.425
+ },
+ {
+  "id": "MOD14A2.A2026209.h21v02.061.2026218130642",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 5626,
+  "clusters": 433,
+  "biggest": 224,
+  "lon": 108.968,
+  "lat": 69.378
+ },
+ {
+  "id": "MOD14A2.A2026201.h17v05.061.2026210035758",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 395,
+  "clusters": 24,
+  "biggest": 195,
+  "lon": -1.523,
+  "lat": 34.566
+ },
+ {
+  "id": "MOD14A2.A2026201.h22v02.061.2026210043511",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 797,
+  "clusters": 95,
+  "biggest": 160,
+  "lon": 117.554,
+  "lat": 66.086
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v02.061.2026234004503",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 857,
+  "clusters": 121,
+  "biggest": 158,
+  "lon": -118.845,
+  "lat": 63.62
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v10.061.2026210033842",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 1045,
+  "clusters": 134,
+  "biggest": 138,
+  "lon": -59.632,
+  "lat": -16.356
+ },
+ {
+  "id": "MOD14A2.A2026209.h08v05.061.2026218124723",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 461,
+  "clusters": 29,
+  "biggest": 131,
+  "lon": -117.453,
+  "lat": 39.62
+ },
+ {
+  "id": "MOD14A2.A2026225.h19v04.061.2026234003613",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 853,
+  "clusters": 146,
+  "biggest": 131,
+  "lon": 21.17,
+  "lat": 44.878
+ },
+ {
+  "id": "MOD14A2.A2026225.h23v04.061.2026234000936",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 636,
+  "clusters": 69,
+  "biggest": 127,
+  "lon": 82.286,
+  "lat": 48.591
+ },
+ {
+  "id": "MOD14A2.A2026209.h19v05.061.2026218123418",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 243,
+  "clusters": 24,
+  "biggest": 104,
+  "lon": 23.247,
+  "lat": 38.133
+ },
+ {
+  "id": "MOD14A2.A2026201.h19v05.061.2026210032352",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 430,
+  "clusters": 48,
+  "biggest": 99,
+  "lon": 13.498,
+  "lat": 37.603
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v09.061.2026233235858",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 1664,
+  "clusters": 151,
+  "biggest": 99,
+  "lon": -54.727,
+  "lat": -8.573
+ },
+ {
+  "id": "MOD14A2.A2026225.h10v04.061.2026234002004",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 509,
+  "clusters": 38,
+  "biggest": 92,
+  "lon": -119.929,
+  "lat": 49.6
+ },
+ {
+  "id": "MOD14A2.A2026209.h22v03.061.2026218125229",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 1289,
+  "clusters": 166,
+  "biggest": 92,
+  "lon": 64.669,
+  "lat": 50.497
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v02.061.2026218130410",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 91,
+  "clusters": 1,
+  "biggest": 91,
+  "lon": -148.255,
+  "lat": 64.31
+ },
+ {
+  "id": "MOD14A2.A2026225.h22v02.061.2026234003728",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 2548,
+  "clusters": 351,
+  "biggest": 91,
+  "lon": 106.904,
+  "lat": 63.269
+ },
+ {
+  "id": "MOD14A2.A2026225.h17v05.061.2026234001318",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 112,
+  "clusters": 7,
+  "biggest": 90,
+  "lon": -6.311,
+  "lat": 37.555
+ },
+ {
+  "id": "MOD14A2.A2026225.h10v03.061.2026234002536",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 447,
+  "clusters": 60,
+  "biggest": 86,
+  "lon": -122.162,
+  "lat": 51.122
+ },
+ {
+  "id": "MOD14A2.A2026209.h20v05.061.2026218123452",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 561,
+  "clusters": 83,
+  "biggest": 86,
+  "lon": 24.626,
+  "lat": 35.135
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v10.061.2026233235820",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 1560,
+  "clusters": 219,
+  "biggest": 84,
+  "lon": -51.922,
+  "lat": -14.425
+ },
+ {
+  "id": "MOD14A2.A2026201.h18v04.061.2026210040653",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 379,
+  "clusters": 72,
+  "biggest": 82,
+  "lon": 6.09,
+  "lat": 43.515
+ },
+ {
+  "id": "MOD14A2.A2026209.h25v03.061.2026218125520",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 210,
+  "clusters": 25,
+  "biggest": 77,
+  "lon": 137.539,
+  "lat": 58.002
+ },
+ {
+  "id": "MOD14A2.A2026225.h17v04.061.2026234000652",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 500,
+  "clusters": 36,
+  "biggest": 72,
+  "lon": -7.601,
+  "lat": 41.771
+ },
+ {
+  "id": "MOD14A2.A2026201.h18v05.061.2026210034220",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 703,
+  "clusters": 87,
+  "biggest": 72,
+  "lon": 8.413,
+  "lat": 36.247
+ },
+ {
+  "id": "MOD14A2.A2026209.h17v04.061.2026218123733",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 312,
+  "clusters": 44,
+  "biggest": 68,
+  "lon": -7.268,
+  "lat": 41.622
+ },
+ {
+  "id": "MOD14A2.A2026201.h21v02.061.2026210043122",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 925,
+  "clusters": 175,
+  "biggest": 67,
+  "lon": 101.709,
+  "lat": 67.813
+ },
+ {
+  "id": "MOD14A2.A2026201.h21v04.061.2026210041109",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 527,
+  "clusters": 52,
+  "biggest": 66,
+  "lon": 45.64,
+  "lat": 48.004
+ },
+ {
+  "id": "MOD14A2.A2026225.h13v09.061.2026233235913",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 1333,
+  "clusters": 273,
+  "biggest": 64,
+  "lon": -46.43,
+  "lat": -9.125
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v10.061.2026218123943",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 1088,
+  "clusters": 144,
+  "biggest": 62,
+  "lon": -59.095,
+  "lat": -18.373
+ },
+ {
+  "id": "MOD14A2.A2026225.h09v04.061.2026234001337",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 388,
+  "clusters": 41,
+  "biggest": 61,
+  "lon": -120.659,
+  "lat": 47.889
+ },
+ {
+  "id": "MOD14A2.A2026169.h21v05.061.2026177234734",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 1796,
+  "clusters": 366,
+  "biggest": 59,
+  "lon": 39.6,
+  "lat": 36.968
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v11.061.2026218123833",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 824,
+  "clusters": 157,
+  "biggest": 57,
+  "lon": -67.734,
+  "lat": -29.187
+ },
+ {
+  "id": "MOD14A2.A2026201.h13v02.061.2026210044159",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 856,
+  "clusters": 110,
+  "biggest": 56,
+  "lon": -117.236,
+  "lat": 64.975
+ },
+ {
+  "id": "MOD14A2.A2026193.h18v05.061.2026201235345",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 585,
+  "clusters": 84,
+  "biggest": 55,
+  "lon": 0.529,
+  "lat": 35.022
+ },
+ {
+  "id": "MOD14A2.A2026225.h08v05.061.2026234000716",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 138,
+  "clusters": 23,
+  "biggest": 53,
+  "lon": -117.596,
+  "lat": 39.803
+ },
+ {
+  "id": "MOD14A2.A2026209.h21v05.061.2026218123526",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 869,
+  "clusters": 194,
+  "biggest": 53,
+  "lon": 47.406,
+  "lat": 39.475
+ },
+ {
+  "id": "MOD14A2.A2026193.h21v04.061.2026202001109",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 139,
+  "clusters": 21,
+  "biggest": 51,
+  "lon": 46.412,
+  "lat": 49.067
+ },
+ {
+  "id": "MOD14A2.A2026201.h08v05.061.2026210032505",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 273,
+  "clusters": 33,
+  "biggest": 50,
+  "lon": -118.309,
+  "lat": 37.0
+ },
+ {
+  "id": "MOD14A2.A2026209.h17v05.061.2026218123336",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 123,
+  "clusters": 15,
+  "biggest": 49,
+  "lon": -6.314,
+  "lat": 39.836
+ },
+ {
+  "id": "MOD14A2.A2026225.h13v10.061.2026234002750",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 1605,
+  "clusters": 317,
+  "biggest": 48,
+  "lon": -48.472,
+  "lat": -12.699
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v02.061.2026218125822",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 243,
+  "clusters": 43,
+  "biggest": 47,
+  "lon": -120.83,
+  "lat": 61.917
+ },
+ {
+  "id": "MOD14A2.A2026225.h22v03.061.2026234001229",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 234,
+  "clusters": 42,
+  "biggest": 47,
+  "lon": 74.348,
+  "lat": 52.518
+ },
+ {
+  "id": "MOD14A2.A2026225.h20v04.061.2026234000842",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 2284,
+  "clusters": 624,
+  "biggest": 45,
+  "lon": 34.209,
+  "lat": 47.142
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v08.061.2026218123236",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 178,
+  "clusters": 31,
+  "biggest": 45,
+  "lon": -63.589,
+  "lat": 9.648
+ },
+ {
+  "id": "MOD14A2.A2026201.h13v10.061.2026210031543",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 615,
+  "clusters": 122,
+  "biggest": 43,
+  "lon": -47.108,
+  "lat": -11.792
+ },
+ {
+  "id": "MOD14A2.A2026201.h23v04.061.2026210035358",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 269,
+  "clusters": 55,
+  "biggest": 42,
+  "lon": 81.133,
+  "lat": 49.437
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v08.061.2026233235832",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 143,
+  "clusters": 26,
+  "biggest": 41,
+  "lon": -63.586,
+  "lat": 9.646
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v03.061.2026234001343",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 88,
+  "clusters": 18,
+  "biggest": 40,
+  "lon": -116.074,
+  "lat": 58.574
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v03.061.2026218124418",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 321,
+  "clusters": 45,
+  "biggest": 38,
+  "lon": -89.975,
+  "lat": 54.384
+ },
+ {
+  "id": "MOD14A2.A2026201.h23v02.061.2026210044114",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 273,
+  "clusters": 45,
+  "biggest": 38,
+  "lon": 113.703,
+  "lat": 62.348
+ },
+ {
+  "id": "MOD14A2.A2026225.h25v03.061.2026234000500",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 52,
+  "clusters": 9,
+  "biggest": 36,
+  "lon": 128.197,
+  "lat": 51.498
+ },
+ {
+  "id": "MOD14A2.A2026193.h13v10.061.2026201234648",
+  "region": "South America",
+  "start": "2026-07-12",
+  "fire_px": 577,
+  "clusters": 110,
+  "biggest": 36,
+  "lon": -46.538,
+  "lat": -10.852
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v03.061.2026210041350",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 181,
+  "clusters": 34,
+  "biggest": 35,
+  "lon": -103.382,
+  "lat": 55.542
+ },
+ {
+  "id": "MOD14A2.A2026193.h19v05.061.2026202001740",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 184,
+  "clusters": 36,
+  "biggest": 33,
+  "lon": 13.388,
+  "lat": 37.544
+ },
+ {
+  "id": "MOD14A2.A2026209.h13v09.061.2026218124018",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 858,
+  "clusters": 177,
+  "biggest": 33,
+  "lon": -47.331,
+  "lat": -6.17
+ },
+ {
+  "id": "MOD14A2.A2026209.h13v10.061.2026218123616",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 844,
+  "clusters": 161,
+  "biggest": 32,
+  "lon": -46.258,
+  "lat": -14.074
+ },
+ {
+  "id": "MOD14A2.A2026209.h26v04.061.2026218124051",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 161,
+  "clusters": 48,
+  "biggest": 31,
+  "lon": 116.501,
+  "lat": 46.533
+ },
+ {
+  "id": "MOD14A2.A2026209.h23v02.061.2026218130337",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 267,
+  "clusters": 41,
+  "biggest": 31,
+  "lon": 113.731,
+  "lat": 62.358
+ },
+ {
+  "id": "MOD14A2.A2026193.h21v05.061.2026201235216",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 922,
+  "clusters": 239,
+  "biggest": 31,
+  "lon": 43.806,
+  "lat": 34.896
+ },
+ {
+  "id": "MOD14A2.A2026225.h09v05.061.2026234000436",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 177,
+  "clusters": 30,
+  "biggest": 30,
+  "lon": -99.004,
+  "lat": 33.165
+ },
+ {
+  "id": "MOD14A2.A2026209.h10v05.061.2026218123707",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 359,
+  "clusters": 110,
+  "biggest": 30,
+  "lon": -93.657,
+  "lat": 32.082
+ },
+ {
+  "id": "MOD14A2.A2026201.h25v03.061.2026210041158",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 213,
+  "clusters": 19,
+  "biggest": 30,
+  "lon": 137.427,
+  "lat": 57.959
+ },
+ {
+  "id": "MOD14A2.A2026201.h21v05.061.2026210034551",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 778,
+  "clusters": 183,
+  "biggest": 30,
+  "lon": 44.905,
+  "lat": 34.283
+ },
+ {
+  "id": "MOD14A2.A2026193.h20v05.061.2026201235413",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 269,
+  "clusters": 71,
+  "biggest": 30,
+  "lon": 27.427,
+  "lat": 37.319
+ },
+ {
+  "id": "MOD14A2.A2026225.h21v05.061.2026234001157",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 630,
+  "clusters": 155,
+  "biggest": 29,
+  "lon": 43.81,
+  "lat": 34.897
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v09.061.2026218123008",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 220,
+  "clusters": 36,
+  "biggest": 29,
+  "lon": -55.17,
+  "lat": -6.559
+ },
+ {
+  "id": "MOD14A2.A2026201.h09v05.061.2026210034633",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 153,
+  "clusters": 52,
+  "biggest": 28,
+  "lon": -105.073,
+  "lat": 37.95
+ },
+ {
+  "id": "MOD14A2.A2026193.h20v04.061.2026201235252",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 526,
+  "clusters": 151,
+  "biggest": 28,
+  "lon": 32.898,
+  "lat": 46.83
+ },
+ {
+  "id": "MOD14A2.A2026209.h10v08.061.2026218123300",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 113,
+  "clusters": 34,
+  "biggest": 28,
+  "lon": -78.154,
+  "lat": 0.572
+ },
+ {
+  "id": "MOD14A2.A2026209.h20v04.061.2026218123707",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 1593,
+  "clusters": 402,
+  "biggest": 27,
+  "lon": 36.675,
+  "lat": 45.135
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v02.061.2026234003937",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 92,
+  "clusters": 13,
+  "biggest": 26,
+  "lon": -142.985,
+  "lat": 63.376
+ },
+ {
+  "id": "MOD14A2.A2026209.h19v04.061.2026218124222",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 356,
+  "clusters": 95,
+  "biggest": 26,
+  "lon": 22.88,
+  "lat": 41.06
+ },
+ {
+  "id": "MOD14A2.A2026169.h20v04.061.2026177235949",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 458,
+  "clusters": 101,
+  "biggest": 26,
+  "lon": 33.864,
+  "lat": 47.351
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v10.061.2026218123642",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 282,
+  "clusters": 53,
+  "biggest": 26,
+  "lon": -63.189,
+  "lat": -14.383
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v11.061.2026210032214",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 55,
+  "clusters": 5,
+  "biggest": 26,
+  "lon": -64.815,
+  "lat": -21.5
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v04.061.2026218124043",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 150,
+  "clusters": 57,
+  "biggest": 25,
+  "lon": -96.511,
+  "lat": 49.363
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v11.061.2026234000518",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 380,
+  "clusters": 71,
+  "biggest": 25,
+  "lon": -58.465,
+  "lat": -20.319
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v11.061.2026210033052",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 132,
+  "clusters": 33,
+  "biggest": 25,
+  "lon": -63.645,
+  "lat": -24.921
+ },
+ {
+  "id": "MOD14A2.A2026201.h20v04.061.2026210032431",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 699,
+  "clusters": 169,
+  "biggest": 24,
+  "lon": 33.836,
+  "lat": 46.944
+ },
+ {
+  "id": "MOD14A2.A2026225.h21v04.061.2026234000331",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 170,
+  "clusters": 31,
+  "biggest": 22,
+  "lon": 43.076,
+  "lat": 44.814
+ },
+ {
+  "id": "MOD14A2.A2026225.h18v04.061.2026234001100",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 178,
+  "clusters": 48,
+  "biggest": 22,
+  "lon": 13.06,
+  "lat": 46.385
+ },
+ {
+  "id": "MOD14A2.A2026193.h17v05.061.2026202000516",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 107,
+  "clusters": 15,
+  "biggest": 22,
+  "lon": -8.09,
+  "lat": 30.906
+ },
+ {
+  "id": "MOD14A2.A2026169.h19v04.061.2026177235635",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 199,
+  "clusters": 58,
+  "biggest": 22,
+  "lon": 18.014,
+  "lat": 40.478
+ },
+ {
+  "id": "MOD14A2.A2026225.h10v05.061.2026234000735",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 491,
+  "clusters": 145,
+  "biggest": 21,
+  "lon": -96.451,
+  "lat": 36.89
+ },
+ {
+  "id": "MOD14A2.A2026201.h22v03.061.2026210040908",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 427,
+  "clusters": 109,
+  "biggest": 21,
+  "lon": 90.913,
+  "lat": 59.275
+ },
+ {
+  "id": "MOD14A2.A2026209.h21v04.061.2026218124227",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 412,
+  "clusters": 103,
+  "biggest": 21,
+  "lon": 54.057,
+  "lat": 48.364
+ },
+ {
+  "id": "MOD14A2.A2026193.h18v04.061.2026201235405",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 222,
+  "clusters": 68,
+  "biggest": 21,
+  "lon": 2.555,
+  "lat": 48.376
+ },
+ {
+  "id": "MOD14A2.A2026201.h13v09.061.2026210034139",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 463,
+  "clusters": 114,
+  "biggest": 21,
+  "lon": -42.226,
+  "lat": -6.479
+ },
+ {
+  "id": "MOD14A2.A2026225.h08v04.061.2026234002202",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 47,
+  "clusters": 3,
+  "biggest": 20,
+  "lon": -123.216,
+  "lat": 42.433
+ },
+ {
+  "id": "MOD14A2.A2026225.h23v03.061.2026234000653",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 187,
+  "clusters": 30,
+  "biggest": 20,
+  "lon": 105.902,
+  "lat": 57.554
+ },
+ {
+  "id": "MOD14A2.A2026209.h23v03.061.2026218125842",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 161,
+  "clusters": 33,
+  "biggest": 20,
+  "lon": 107.589,
+  "lat": 58.438
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v09.061.2026234000235",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 226,
+  "clusters": 49,
+  "biggest": 20,
+  "lon": -62.362,
+  "lat": -9.357
+ },
+ {
+  "id": "MOD14A2.A2026209.h23v04.061.2026218124536",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 117,
+  "clusters": 39,
+  "biggest": 19,
+  "lon": 81.175,
+  "lat": 47.559
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v10.061.2026233235539",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 170,
+  "clusters": 49,
+  "biggest": 19,
+  "lon": -61.2,
+  "lat": -10.397
+ },
+ {
+  "id": "MOD14A2.A2026225.h23v02.061.2026234003757",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 142,
+  "clusters": 30,
+  "biggest": 18,
+  "lon": 129.752,
+  "lat": 63.568
+ },
+ {
+  "id": "MOD14A2.A2026169.h18v05.061.2026177235835",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 127,
+  "clusters": 24,
+  "biggest": 17,
+  "lon": 6.052,
+  "lat": 31.661
+ },
+ {
+  "id": "MOD14A2.A2026209.h13v02.061.2026218131847",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 92,
+  "clusters": 22,
+  "biggest": 16,
+  "lon": -108.706,
+  "lat": 62.968
+ },
+ {
+  "id": "MOD14A2.A2026201.h23v03.061.2026210040948",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 191,
+  "clusters": 37,
+  "biggest": 16,
+  "lon": 109.437,
+  "lat": 59.801
+ },
+ {
+  "id": "MOD14A2.A2026225.h10v08.061.2026233235931",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 112,
+  "clusters": 39,
+  "biggest": 16,
+  "lon": -71.176,
+  "lat": 9.208
+ },
+ {
+  "id": "MOD14A2.A2026209.h13v11.061.2026218123635",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 93,
+  "clusters": 36,
+  "biggest": 16,
+  "lon": -54.273,
+  "lat": -26.142
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v08.061.2026210031613",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 88,
+  "clusters": 18,
+  "biggest": 16,
+  "lon": -63.564,
+  "lat": 9.647
+ },
+ {
+  "id": "MOD14A2.A2026193.h13v11.061.2026201234742",
+  "region": "South America",
+  "start": "2026-07-12",
+  "fire_px": 243,
+  "clusters": 77,
+  "biggest": 16,
+  "lon": -56.716,
+  "lat": -28.555
+ },
+ {
+  "id": "MOD14A2.A2026225.h18v05.061.2026234001015",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 81,
+  "clusters": 22,
+  "biggest": 15,
+  "lon": 6.063,
+  "lat": 31.668
+ },
+ {
+  "id": "MOD14A2.A2026169.h17v04.061.2026178000625",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 78,
+  "clusters": 21,
+  "biggest": 15,
+  "lon": -6.475,
+  "lat": 42.537
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v10.061.2026210034702",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 202,
+  "clusters": 43,
+  "biggest": 15,
+  "lon": -63.545,
+  "lat": -14.597
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v03.061.2026210041850",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 56,
+  "clusters": 16,
+  "biggest": 14,
+  "lon": -120.81,
+  "lat": 58.105
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v09.061.2026210033631",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 104,
+  "clusters": 29,
+  "biggest": 14,
+  "lon": -51.915,
+  "lat": -6.935
+ },
+ {
+  "id": "MOD14A2.A2026193.h26v04.061.2026201235125",
+  "region": "Siberia",
+  "start": "2026-07-12",
+  "fire_px": 234,
+  "clusters": 87,
+  "biggest": 13,
+  "lon": 110.524,
+  "lat": 40.227
+ },
+ {
+  "id": "MOD14A2.A2026225.h10v09.061.2026233235932",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 73,
+  "clusters": 22,
+  "biggest": 13,
+  "lon": -74.681,
+  "lat": -8.271
+ },
+ {
+  "id": "MOD14A2.A2026201.h10v08.061.2026210033019",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 67,
+  "clusters": 21,
+  "biggest": 13,
+  "lon": -72.668,
+  "lat": 9.829
+ },
+ {
+  "id": "MOD14A2.A2026201.h10v05.061.2026210034956",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 321,
+  "clusters": 123,
+  "biggest": 12,
+  "lon": -94.557,
+  "lat": 33.878
+ },
+ {
+  "id": "MOD14A2.A2026209.h26v03.061.2026218125014",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 43,
+  "clusters": 11,
+  "biggest": 12,
+  "lon": 139.062,
+  "lat": 52.778
+ },
+ {
+  "id": "MOD14A2.A2026201.h26v04.061.2026210034037",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 175,
+  "clusters": 70,
+  "biggest": 12,
+  "lon": 110.522,
+  "lat": 40.228
+ },
+ {
+  "id": "MOD14A2.A2026201.h26v03.061.2026210035326",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 43,
+  "clusters": 7,
+  "biggest": 12,
+  "lon": 137.571,
+  "lat": 50.651
+ },
+ {
+  "id": "MOD14A2.A2026225.h20v05.061.2026234000900",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 174,
+  "clusters": 58,
+  "biggest": 12,
+  "lon": 33.638,
+  "lat": 39.51
+ },
+ {
+  "id": "MOD14A2.A2026209.h18v04.061.2026218124735",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 238,
+  "clusters": 69,
+  "biggest": 12,
+  "lon": 14.335,
+  "lat": 48.272
+ },
+ {
+  "id": "MOD14A2.A2026225.h19v05.061.2026234003427",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-08-13",
+  "fire_px": 44,
+  "clusters": 15,
+  "biggest": 11,
+  "lon": 24.477,
+  "lat": 38.882
+ },
+ {
+  "id": "MOD14A2.A2026209.h18v05.061.2026218123643",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-28",
+  "fire_px": 86,
+  "clusters": 22,
+  "biggest": 11,
+  "lon": 9.135,
+  "lat": 36.945
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v08.061.2026234001715",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 44,
+  "clusters": 9,
+  "biggest": 11,
+  "lon": -54.575,
+  "lat": 5.048
+ },
+ {
+  "id": "MOD14A2.A2026225.h26v04.061.2026234000638",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 265,
+  "clusters": 94,
+  "biggest": 10,
+  "lon": 111.394,
+  "lat": 40.431
+ },
+ {
+  "id": "MOD14A2.A2026201.h20v05.061.2026210032326",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 156,
+  "clusters": 57,
+  "biggest": 10,
+  "lon": 38.183,
+  "lat": 38.337
+ },
+ {
+  "id": "MOD14A2.A2026201.h19v04.061.2026210034928",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-20",
+  "fire_px": 165,
+  "clusters": 56,
+  "biggest": 10,
+  "lon": 23.128,
+  "lat": 44.206
+ },
+ {
+  "id": "MOD14A2.A2026169.h17v05.061.2026177235439",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 56,
+  "clusters": 17,
+  "biggest": 10,
+  "lon": -7.954,
+  "lat": 37.375
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v09.061.2026210031610",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 34,
+  "clusters": 11,
+  "biggest": 10,
+  "lon": -61.077,
+  "lat": -9.125
+ },
+ {
+  "id": "MOD14A2.A2026201.h25v02.061.2026210034840",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 9,
+  "clusters": 1,
+  "biggest": 9,
+  "lon": 144.696,
+  "lat": 60.047
+ },
+ {
+  "id": "MOD14A2.A2026169.h20v05.061.2026177235928",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 161,
+  "clusters": 50,
+  "biggest": 9,
+  "lon": 27.054,
+  "lat": 38.821
+ },
+ {
+  "id": "MOD14A2.A2026225.h13v11.061.2026234000008",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 240,
+  "clusters": 91,
+  "biggest": 9,
+  "lon": -47.162,
+  "lat": -21.715
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v04.061.2026234002035",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 56,
+  "clusters": 25,
+  "biggest": 8,
+  "lon": -96.891,
+  "lat": 49.458
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v03.061.2026218125527",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 46,
+  "clusters": 18,
+  "biggest": 8,
+  "lon": -98.902,
+  "lat": 51.189
+ },
+ {
+  "id": "MOD14A2.A2026209.h24v03.061.2026218125555",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 30,
+  "clusters": 7,
+  "biggest": 8,
+  "lon": 130.038,
+  "lat": 59.66
+ },
+ {
+  "id": "MOD14A2.A2026201.h24v04.061.2026210040150",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 73,
+  "clusters": 27,
+  "biggest": 8,
+  "lon": 83.761,
+  "lat": 43.408
+ },
+ {
+  "id": "MOD14A2.A2026193.h19v04.061.2026201235135",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-07-12",
+  "fire_px": 163,
+  "clusters": 65,
+  "biggest": 8,
+  "lon": 23.174,
+  "lat": 44.19
+ },
+ {
+  "id": "MOD14A2.A2026169.h18v04.061.2026178000859",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 258,
+  "clusters": 92,
+  "biggest": 8,
+  "lon": 8.709,
+  "lat": 45.787
+ },
+ {
+  "id": "MOD14A2.A2026225.h12v03.061.2026234003123",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 7,
+  "clusters": 1,
+  "biggest": 7,
+  "lon": -106.814,
+  "lat": 56.493
+ },
+ {
+  "id": "MOD14A2.A2026201.h11v04.061.2026210033651",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 58,
+  "clusters": 23,
+  "biggest": 7,
+  "lon": -81.672,
+  "lat": 41.462
+ },
+ {
+  "id": "MOD14A2.A2026201.h08v04.061.2026210040803",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 14,
+  "clusters": 3,
+  "biggest": 7,
+  "lon": -120.078,
+  "lat": 40.628
+ },
+ {
+  "id": "MOD14A2.A2026225.h24v03.061.2026234001601",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 7,
+  "clusters": 1,
+  "biggest": 7,
+  "lon": 106.922,
+  "lat": 55.174
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v09.061.2026218123109",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 40,
+  "clusters": 14,
+  "biggest": 7,
+  "lon": -64.146,
+  "lat": -0.476
+ },
+ {
+  "id": "MOD14A2.A2026209.h25v04.061.2026218123951",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 6,
+  "clusters": 1,
+  "biggest": 6,
+  "lon": 121.042,
+  "lat": 49.09
+ },
+ {
+  "id": "MOD14A2.A2026209.h25v02.061.2026218125124",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 19,
+  "clusters": 7,
+  "biggest": 6,
+  "lon": 151.295,
+  "lat": 60.126
+ },
+ {
+  "id": "MOD14A2.A2026201.h24v03.061.2026210035417",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 20,
+  "clusters": 7,
+  "biggest": 6,
+  "lon": 136.681,
+  "lat": 59.85
+ },
+ {
+  "id": "MOD14A2.A2026169.h21v04.061.2026177235952",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 46,
+  "clusters": 16,
+  "biggest": 6,
+  "lon": 45.849,
+  "lat": 48.856
+ },
+ {
+  "id": "MOD14A2.A2026209.h10v09.061.2026218123119",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 39,
+  "clusters": 15,
+  "biggest": 6,
+  "lon": -75.035,
+  "lat": -8.208
+ },
+ {
+  "id": "MOD14A2.A2026201.h13v11.061.2026210034727",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 63,
+  "clusters": 27,
+  "biggest": 6,
+  "lon": -43.746,
+  "lat": -20.55
+ },
+ {
+  "id": "MOD14A2.A2026225.h13v02.061.2026234004300",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 40,
+  "clusters": 19,
+  "biggest": 5,
+  "lon": -116.778,
+  "lat": 65.377
+ },
+ {
+  "id": "MOD14A2.A2026209.h24v04.061.2026218124516",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 21,
+  "clusters": 10,
+  "biggest": 5,
+  "lon": 95.021,
+  "lat": 43.679
+ },
+ {
+  "id": "MOD14A2.A2026209.h24v02.061.2026218125915",
+  "region": "Siberia",
+  "start": "2026-07-28",
+  "fire_px": 6,
+  "clusters": 2,
+  "biggest": 5,
+  "lon": 147.842,
+  "lat": 63.357
+ },
+ {
+  "id": "MOD14A2.A2026209.h13v03.061.2026218125705",
+  "region": "NA-west/Canada",
+  "start": "2026-07-28",
+  "fire_px": 8,
+  "clusters": 3,
+  "biggest": 4,
+  "lon": -67.873,
+  "lat": 52.24
+ },
+ {
+  "id": "MOD14A2.A2026225.h25v04.061.2026234000219",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 12,
+  "clusters": 4,
+  "biggest": 4,
+  "lon": 114.001,
+  "lat": 46.392
+ },
+ {
+  "id": "MOD14A2.A2026225.h24v04.061.2026234000841",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 36,
+  "clusters": 16,
+  "biggest": 4,
+  "lon": 83.766,
+  "lat": 43.408
+ },
+ {
+  "id": "MOD14A2.A2026169.h19v05.061.2026177235934",
+  "region": "Mediterranean/S-Europe",
+  "start": "2026-06-18",
+  "fire_px": 18,
+  "clusters": 9,
+  "biggest": 4,
+  "lon": 22.941,
+  "lat": 37.908
+ },
+ {
+  "id": "MOD14A2.A2026209.h12v08.061.2026218122954",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 11,
+  "clusters": 4,
+  "biggest": 4,
+  "lon": -56.703,
+  "lat": 0.575
+ },
+ {
+  "id": "MOD14A2.A2026209.h11v11.061.2026218124041",
+  "region": "South America",
+  "start": "2026-07-28",
+  "fire_px": 4,
+  "clusters": 1,
+  "biggest": 4,
+  "lon": -68.884,
+  "lat": -22.317
+ },
+ {
+  "id": "MOD14A2.A2026201.h10v09.061.2026210035858",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 12,
+  "clusters": 5,
+  "biggest": 4,
+  "lon": -78.188,
+  "lat": -7.375
+ },
+ {
+  "id": "MOD14A2.A2026225.h26v03.061.2026234000502",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 6,
+  "clusters": 3,
+  "biggest": 3,
+  "lon": 143.369,
+  "lat": 51.421
+ },
+ {
+  "id": "MOD14A2.A2026225.h24v02.061.2026234003632",
+  "region": "Siberia",
+  "start": "2026-08-13",
+  "fire_px": 4,
+  "clusters": 2,
+  "biggest": 3,
+  "lon": 160.199,
+  "lat": 64.446
+ },
+ {
+  "id": "MOD14A2.A2026201.h25v04.061.2026210032738",
+  "region": "Siberia",
+  "start": "2026-07-20",
+  "fire_px": 5,
+  "clusters": 2,
+  "biggest": 3,
+  "lon": 113.998,
+  "lat": 46.39
+ },
+ {
+  "id": "MOD14A2.A2026225.h11v11.061.2026234001024",
+  "region": "South America",
+  "start": "2026-08-13",
+  "fire_px": 3,
+  "clusters": 1,
+  "biggest": 3,
+  "lon": -68.878,
+  "lat": -22.318
+ },
+ {
+  "id": "MOD14A2.A2026193.h26v03.061.2026202001008",
+  "region": "Siberia",
+  "start": "2026-07-12",
+  "fire_px": 2,
+  "clusters": 1,
+  "biggest": 2,
+  "lon": 161.322,
+  "lat": 56.637
+ },
+ {
+  "id": "MOD14A2.A2026225.h09v03.061.2026234001108",
+  "region": "NA-west/Canada",
+  "start": "2026-08-13",
+  "fire_px": 1,
+  "clusters": 1,
+  "biggest": 1,
+  "lon": -126.482,
+  "lat": 50.037
+ },
+ {
+  "id": "MOD14A2.A2026201.h13v03.061.2026210033928",
+  "region": "NA-west/Canada",
+  "start": "2026-07-20",
+  "fire_px": 1,
+  "clusters": 1,
+  "biggest": 1,
+  "lon": -64.839,
+  "lat": 51.529
+ },
+ {
+  "id": "MOD14A2.A2026201.h12v08.061.2026210032037",
+  "region": "South America",
+  "start": "2026-07-20",
+  "fire_px": 1,
+  "clusters": 1,
+  "biggest": 1,
+  "lon": -54.488,
+  "lat": 5.021
+ }
+]

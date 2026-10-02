@@ -1,0 +1,27 @@
+NA-west/Canada: 48 Terra composites
+Siberia: 44 Terra composites
+Mediterranean/S-Europe: 50 Terra composites
+South America: 44 Terra composites
+
+TOP CANDIDATES (largest connected 1-km fire cluster in an 8-day composite):
+  NA-west/Canada           2026-07-20 tile h10v03 | fire px  1481 | biggest cluster  696 px | centre lon -121.711 lat  51.158
+  Mediterranean/S-Europe   2026-07-20 tile h17v04 | fire px  1479 | biggest cluster  675 px | centre lon   -4.543 lat  40.361
+  NA-west/Canada           2026-07-28 tile h10v04 | fire px  1931 | biggest cluster  654 px | centre lon -119.639 lat  48.722
+  NA-west/Canada           2026-07-20 tile h09v04 | fire px  4586 | biggest cluster  581 px | centre lon -120.625 lat  44.513
+  Siberia                  2026-07-28 tile h22v02 | fire px  4793 | biggest cluster  566 px | centre lon  117.847 lat  66.014
+  NA-west/Canada           2026-07-28 tile h10v03 | fire px  1062 | biggest cluster  488 px | centre lon -121.508 lat  51.214
+  Siberia                  2026-08-13 tile h21v02 | fire px  5516 | biggest cluster  457 px | centre lon   76.183 lat  65.491
+  NA-west/Canada           2026-07-28 tile h09v04 | fire px  3341 | biggest cluster  449 px | centre lon -117.914 lat  43.688
+  NA-west/Canada           2026-07-28 tile h09v05 | fire px   696 | biggest cluster  398 px | centre lon -112.346 lat  38.775
+  Mediterranean/S-Europe   2026-07-12 tile h17v04 | fire px   589 | biggest cluster  323 px | centre lon   -3.050 lat  41.101
+  Siberia                  2026-07-20 tile h24v02 | fire px   501 | biggest cluster  319 px | centre lon  164.398 lat  66.767
+  NA-west/Canada           2026-07-20 tile h10v04 | fire px  1111 | biggest cluster  282 px | centre lon -119.194 lat  48.214
+  NA-west/Canada           2026-07-20 tile h12v02 | fire px  2837 | biggest cluster  272 px | centre lon -122.240 lat  63.425
+  Siberia                  2026-07-28 tile h21v02 | fire px  5626 | biggest cluster  224 px | centre lon  108.968 lat  69.378
+  Mediterranean/S-Europe   2026-07-20 tile h17v05 | fire px   395 | biggest cluster  195 px | centre lon   -1.523 lat  34.566
+  Siberia                  2026-07-20 tile h22v02 | fire px   797 | biggest cluster  160 px | centre lon  117.554 lat  66.086
+  NA-west/Canada           2026-08-13 tile h12v02 | fire px   857 | biggest cluster  158 px | centre lon -118.845 lat  63.620
+  South America            2026-07-20 tile h12v10 | fire px  1045 | biggest cluster  138 px | centre lon  -59.632 lat -16.356
+  NA-west/Canada           2026-07-28 tile h08v05 | fire px   461 | biggest cluster  131 px | centre lon -117.453 lat  39.620
+  Mediterranean/S-Europe   2026-08-13 tile h19v04 | fire px   853 | biggest cluster  131 px | centre lon   21.170 lat  44.878
+DONE
